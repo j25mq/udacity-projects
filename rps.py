@@ -17,9 +17,11 @@ class Player():
 
 class CyclePlayer(Player):
     def move(self):
-        for move in moves:
-            if moves % 3 == 0:
-                return moves
+        self.index = 0
+        if index % 3 == 0:
+            index = 0
+        index = index + 1
+        return moves[index]
 
     def learn(self, my_move, their_move):
         self.my_move = my_move
