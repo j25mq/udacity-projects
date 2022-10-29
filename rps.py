@@ -17,12 +17,9 @@ class Player():
 
 class CyclePlayer(Player):
     def move(self):
-        if self.my_move == "rock":
-            return "paper"
-        elif self.my_move == "paper":
-            return "scissors"
-        else:
-            return
+        for move in moves:
+            if moves % 3 == 0:
+                return moves
 
     def learn(self, my_move, their_move):
         self.my_move = my_move
@@ -60,7 +57,7 @@ class HumanPlayer(Player):
             return move1
         else:
             print("Try again.")
-            self.move()
+            return self.move()
 
 
 class Game:
