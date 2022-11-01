@@ -1,6 +1,6 @@
 import random
 
-moves = ['rock', 'paper', 'scissors']
+moves = ["rock", "paper", "scissors"]
 
 
 class Player():
@@ -17,11 +17,17 @@ class Player():
 
 class CyclePlayer(Player):
     def move(self):
-        self.index = 0
-        if index % 3 == 0:
-            index = 0
-        index = index + 1
-        return moves[index]
+        index = 0
+        moves = index
+        if self.my_move == "rock":
+            index += 1
+            return "paper"
+        elif self.my_move == "paper":
+            index += 1
+            return "scissors"
+        else:
+            index += 1
+            return "rock"
 
     def learn(self, my_move, their_move):
         self.my_move = my_move
