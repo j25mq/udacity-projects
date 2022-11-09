@@ -1,4 +1,5 @@
 let products = [];
+
 let imac = {
     name: "iMac",
     price: 1299,
