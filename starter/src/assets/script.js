@@ -122,11 +122,6 @@ function emptyCart() {
 
 function pay(amount) {
   totalPaid += amount;
-  cash_returned = totalPaid - cartTotal();
-  if (cash_returned > 0) {
-    totalPaid = 0;
-    return cash_returned;
-  };
   return totalPaid - cartTotal();
 };
 
