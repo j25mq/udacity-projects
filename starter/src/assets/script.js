@@ -99,11 +99,11 @@ function removeProductFromCart(productId) {
   - cartTotal should return the sum of the products in the cart
 */
 
-let sum = 0;
 
 function cartTotal() {
+  let sum = 0;
   for (let index = 0; index < cart.length; index++) {
-    sum += cart[index].price;
+    sum += cart[index].price * cart[index].quantity;
   }
   return sum;
 };
