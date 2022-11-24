@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Create a new post</title>
+        <link rel="stylesheet" href="css/post.css?t=2">
+        <link rel="stylesheet" href="css/lm-dm.css?t=1">
+    </head>
+    <body>
+        <div class="mainContainer">
+            <div class="leftContainer">
+                <input type="checkbox" id="darkmode-toggle" onclick="switchMode()"/>
+                <label for="darkmode-toggle"></label>
+                <script>
+                    function switchMode() {
+                        const element = document.body;
+                        element.classList.toggle("dm");
+                    }
+                </script>
+            </div>
+            <div class="centerContainer">
+                <a href="homepage.html" target="_self">
+                    <h1 class="headerTitle">ThisISABlog</h1>
+                </a>
+            </div>
+            <nav class="rightContainer">
+                <a href="account.html" target="_self">
+                    <svg class="accountIcon" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+                        <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/>
+                    </svg>
+                </a>
+                <button>
+                    <a href="post.html" target="_self">
+                        Create a post
+                        <svg class="plusIcon" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
+                            <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                        </svg>
+                    </a>
+                </button>
+            </nav>
+        </div>
+        <h1 class="createPostTitle">Create a new post:</h1>
+        <div class="postContainer">
+            <form action="post_.html" class="firstRow containerForm">
+                <input class="titleName"  name="titlename" type="text" placeholder="title post name"/>
+                <label>
+                    <select class="categoryChoice" name="categoryChoice">
+                        <option value="">Choose a category:</option>
+                        <option value="Graphic Design">Graphic Design</option>
+                        <option value="Code">Code</option>
+                        <option value="Web Design">Web Design</option>
+                    </select>
+                </label>
+                <input type="date" name="date" placeholder="today's date" required>
+                <textarea class="content" name="content" type="text" placeholder="content of the post" minlength="10" maxlength="5000" required></textarea>
+                <label id="fileInput" >
+                    add picture(s)
+                    <input type="file" id="image_uploads" name="image_uploads" accept=".jpg, .jpeg, .png" multiple>
+                </label>
+                <input class="authorName" name="authorName" type="text" placeholder="author's name" required>
+                <textarea class="abtAuthor" name="abtAuthor" type="text" placeholder="about the author" minlength="10" maxlength="500" required></textarea>
+                <button type="submit" class="submitButton">Post</button>
+            </form>
+            <div class="secondRow postOutput">
+                <p class="titleOutput"></p> <!-- title post name -->
+                <p class="resultCategory"></p> <!-- category -->
+                <p class="dateOutput"></p> <!-- date -->
+                <p class="contentOutput"></p> <!-- post content -->
+                <p class="authorNameOutput"></p> <!-- author's name -->
+                <p class="abtAuthorOutput"></p> <!-- about author -->
+            </div>
+        </div>
+        <!-- title post name -->
+        <script>
+            const title = document.querySelector('.titleName');
+            title.addEventListener('change', (event) => {
+                const resultTitle = document.querySelector('.titleOutput');
+                resultTitle.textContent = `Title name of the post: ${event.target.value}`;
+            });
+        </script>
+
+        <!-- category -->
+        <script>
+            const categoryChoice = document.querySelector('.categoryChoice');
+            categoryChoice.addEventListener('change', (event) => {
+                const resultCat = document.querySelector('.resultCategory');
+                resultCat.textContent = `Category the post will be featured in: ${event.target.value}`;
+            });
+        </script>
+
+        <!-- date -->
+        <script>
+            const date = document.querySelector('input[type="date"]');
+            date.addEventListener('change', (event) => {
+                const resultDate = document.querySelector('.dateOutput');
+                resultDate.textContent = `Date of the post: ${event.target.value}`;
+            });
+        </script>
+
+        <!-- post content -->
+        <script>
+            const content = document.querySelector('.content');
+            content.addEventListener('change', (event) => {
+                const resultContent = document.querySelector('.contentOutput');
+                resultContent.textContent = `Content of the post: ${event.target.value}`;
+            });
+        </script>
+
+        <!-- author's name -->
+        <script>
+            const authorName = document.querySelector('.authorName');
+            authorName.addEventListener('change', (event) => {
+                const resultAuthorName = document.querySelector('.authorNameOutput');
+                resultAuthorName.textContent = `Author's name: ${event.target.value}`;
+            });
+        </script>
+
+        <!-- about author -->
+        <script>
+            const abtAuthor = document.querySelector('.abtAuthor');
+            abtAuthor.addEventListener('change', (event) => {
+                const resultabtAuthor = document.querySelector('.abtAuthorOutput');
+                resultabtAuthor.textContent = `About the author: ${event.target.value}`;
+            });
+        </script>
+
+        <!-- pictures -->
+        <script>
+            const input = document.querySelector('input');
+            const preview = document.querySelector('.preview');
+            input.style.opacity = 0;
+            input.addEventListener('change', updateImageDisplay);
+            function updateImageDisplay() {
+                while(preview.firstChild) {
+                    preview.removeChild(preview.firstChild);
+                }
+                const curFiles = input.files;
+                if(curFiles.length === 0) {
+                    const para = document.createElement('p');
+                    para.textContent = 'no files selected for upload';
+                    preview.appendChild(para);
+                } else {
+                    const list = document.createElement('ol');
+                    preview.appendChild(list);
+                for(const file of curFiles) {
+                const listItem = document.createElement('li');
+                const para = document.createElement('p');
+                    if(validFileType(file)) {
+                        para.textContent = `file name ${file.name}, file size ${returnFileSize(file.size)}.`;
+                        const image = document.createElement('img');
+                        image.src = URL.createObjectURL(file);
+                        listItem.appendChild(image);
+                        listItem.appendChild(para);
+                    } else {
+                        para.textContent = `file name ${file.name}: not valid file type.`;
+                        listItem.appendChild(para);
+                    }
+                    list.appendChild(listItem);
+                    }
+                }
+            }
+            const fileTypes = [
+                'image/apng',
+                'image/bmp',
+                'image/gif',
+                'image/jpeg',
+                'image/pjpeg',
+                'image/png',
+                'image/svg+xml',
+                'image/tiff',
+                'image/webp',
+                `image/x-icon`
+            ];
+            function validFileType(file) {
+                return fileTypes.includes(file.type);
+            }
+            function returnFileSize(number) {
+                if(number < 1024) {
+                    return number + 'bytes';
+                } else if(number > 1024 && number < 1048576) {
+                    return (number/1024).toFixed(1) + 'KB';
+                } else if(number > 1048576) {
+                    return (number/1048576).toFixed(1) + 'MB';
+                }
+            }
+        </script>
+        <footer class="footerContainer">
+            <a href="design-system.pdf" target="_blank">
+            <p>Design System</p>
+            </a>
+        </footer>
+    </body>
+</html>

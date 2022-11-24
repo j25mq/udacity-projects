@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Create a new post</title>
+        <link rel="stylesheet" href="css/post.css?t=2">
+        <link rel="stylesheet" href="css/lm-dm.css?t=1">
+    </head>
+    <body>
+        <div class="mainContainer">
+            <div class="leftContainer">
+                <input type="checkbox" id="darkmode-toggle" onclick="switchMode()"/>
+                <label for="darkmode-toggle"></label>
+                <script>
+                    function switchMode() {
+                        const element = document.body;
+                        element.classList.toggle("dm");
+                    }
+                </script>
+            </div>
+            <div class="centerContainer">
+                <a href="homepage.html" target="_self">
+                    <h1 class="headerTitle">ThisISABlog</h1>
+                </a>
+            </div>
+            <nav class="rightContainer">
+                <a href="account.html" target="_self">
+                    <svg class="accountIcon" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+                        <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/>
+                    </svg>
+                </a>
+                <button>
+                    <a href="post.html" target="_self">
+                        Create a post
+                        <svg class="plusIcon" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
+                            <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                        </svg>
+                    </a>
+                </button>
+            </nav>
+        </div>
+        <h1 class="createPostTitle">You have create a new post.</h1>
+        <footer class="footerContainer">
+            <a href="design-system.pdf" target="_blank">
+            <p>Design System</p>
+            </a>
+        </footer>
+    </body>
+</html>
