@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap'); /* h1, h2, h3, h4 */
+@import url('https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap'); /* p */
+@import url('https://fonts.googleapis.com/css2?family=Cutive+Mono&display=swap'); /* input, textarea */
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text&display=swap'); /* header title */ 
+
+* {
+    box-sizing: border-box;
+}
+body {
+    background-color: white;
+}
+#wrapper {
+    padding: 20px !important; 
+}
+
+/* buttons, links, pre, input */ 
+button {
+    border: 1px solid #bdbdbd;
+    border-radius: 10px;
+    background-color: #d5d6d7;
+    font-family: 'Roboto Mono', monospace;
+    text-transform: uppercase;
+}
+a {
+    color: black;
+    font-weight: light;
+    text-decoration: none;
+}
+pre {
+    border-bottom: 1px solid #8f9ab9;
+    border-right: 1px solid #8f9ab9;
+    border-bottom-right-radius: 10px;
+    padding-right: 10px;
+}
+.mainContainer input {
+    outline: none;
+    visibility: hidden;
+}
+
+/* hover */ 
+a:hover,
+button:hover svg {
+    color: black;
+}
+button:hover {
+    background-color: #8f9ab9;
+    cursor: pointer;
+    transition: .2s;
+} 
+svg:hover {
+    color: #13234f77;
+    cursor: pointer;
+    transition: .2s;
+}
+.svgNoHover:hover {
+    color: black;
+    cursor: default;
+}
+.footerContainer a:hover {
+    color: #8f9ab9;
+}
+
+
+@media (min-width: 450px) { /* medium to large screen */
+    figcaption {
+        font-size: 14px;
+    }
+    button {
+        height: 45px;
+        font-size: 16px;
+        width: 180px;
+    }
+}
+
+@media (max-width: 450px) { /* small screen */
+    figcaption {
+        font-size: 10px;
+    }
+    button {
+        height: 40px;
+        font-size: 12px;
+        width: 85px;
+    }
+}

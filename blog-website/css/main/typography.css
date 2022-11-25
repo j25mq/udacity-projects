@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Gloria+Hallelujah&family=Permanent+Marker&display=swap');
+
+h1, 
+h2, 
+h3, 
+h4 {
+    font-family: 'Permanent Marker', cursive;
+}
+h4 {
+    font-weight: 100;
+}
+p,
+figcaption,
+footer a {
+    font-family: 'Gloria Hallelujah', cursive;
+    text-align: justify;
+}
+figcaption {
+    background-color: #d5d6d7;
+    opacity: 0.8;
+}
+input, 
+textarea {
+    font-family: 'Cutive Mono', monospace;
+}
+
+@media (min-width: 450px) { /* medium to large screen */
+    h1 {
+        font-size: 40px;
+    }
+    h2 {
+        font-size: 36px;
+    }
+    h3 {
+        font-size: 32px;
+    }
+    h4 { /* date and cat txt */
+        font-size: 14px;
+    }
+    p {
+        font-size: 16px;
+        text-align: justify;
+    }
+}
+
+@media (max-width: 450px) { /* small screen */
+    h1 {
+        font-size: 20px;
+    }
+    h2 {
+        font-size: 16px;
+    }
+    h3 {
+        font-size: 15px;
+    }
+    h4 { /* date and cat txt */
+        font-size: 10px;
+    }
+    p {
+        font-size: 12px;
+    }
+}
