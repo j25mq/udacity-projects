@@ -1,0 +1,113 @@
+/* body and wrapper rulesets */
+body {
+    background: #010101;
+    /* background-color: black; */
+    color: #fff;
+    font-family: 'Source Code Pro', monospace;
+}
+main {
+    background: #010101;
+    padding-bottom: 20px;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 20px;
+}
+
+/* tpography and font sizes */
+h1 {
+    font-size: 60px;
+    margin: 10em 0em;
+}
+h2 {
+    border-bottom: 2px solid #00040a;
+    font-size: 40px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+p {
+    font-size: 20px;
+    line-height: 3em;
+}
+nav li {
+    font-size: 18px;
+}
+
+/* header */
+.page-header {
+    background: #010101;
+    border-bottom: 1px solid #161616;
+    color: #fff;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+/* nav bar */
+nav ul {
+    display: flex;
+    padding: 10px;
+    text-align: center;
+}
+@media (max-width: 800px) { /* smaller screens */
+    nav ul {
+        gap: 10px;
+        flex-direction: column;
+    }
+}
+@media (min-width: 801px) { /* larger screens */
+    nav ul {
+        gap: 20px;
+        justify-content: flex-end;
+    }
+}
+.active {
+    background: #000c1f;
+    border-radius: 20px;
+    color: #fff;
+    display: flex;
+    padding: 1em;
+    transition: ease 0.5s all;
+}
+.navbar-menu .menu-link {
+    color: #fff;
+    display: flex;
+    padding: 1em;
+}
+.navbar-menu .menu-link:hover {
+    background: #000c1f;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: ease 0.3s all;
+}
+
+/* landing container */
+.landing-container {
+    padding-bottom: 10px;
+    padding-top: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-bottom: 5em;
+    margin-top: 5em;
+}
+section p {
+    display: flex;
+    text-align: justify;
+}
+
+/* active section behaviour */
+section.active-class {
+    background: linear-gradient(#000103, #00040a);
+    border-radius: 10px;
+    transition: .5s;
+}
+
+/* footer */
+.page__footer {
+    align-items: center;
+    background-color: #000308;
+    display: flex;
+    height: 100px;
+    justify-content: center;
+    text-align: center;
+    margin: 0;
+}
