@@ -6,6 +6,7 @@
     }
     h2 {
         font-size: 30px;
+        padding-top: 250px;
     }
     p {
         font-size: 15px;
@@ -15,17 +16,19 @@
         font-size: 14px;
     }
     nav ul {
-        gap: 5px;
+        gap: 0;
         flex-direction: column;
+        padding: 0;
     }
 }
 @media (min-width: 801px) { /* larger screens */
     h1 {
         font-size: 60px;
-        margin: 10em 0em;
+        margin: 8em 0em;
     }
     h2 {
         font-size: 40px;
+        padding-top: 110px;
     }
     p {
         font-size: 20px;
@@ -37,6 +40,7 @@
     nav ul {
         gap: 20px;
         justify-content: flex-end;
+        padding: 10px;
     }
 }
 
@@ -58,13 +62,12 @@ main {
 h2 {
     border-bottom: 2px solid #00040a;
     padding-bottom: 10px;
-    padding-top: 10px;
 }
 
 /* header */
 .page-header {
     background: #010101;
-    border-bottom: 1px solid #001d4d;
+    border-bottom: 1px solid #001029;
     color: #fff;
     position: fixed;
     top: 0;
@@ -74,11 +77,10 @@ h2 {
 /* nav bar */
 nav ul {
     display: flex;
-    padding: 10px;
     text-align: center;
 }
 .active {
-    background: #001d4d;
+    background: #001029;
     border-radius: 20px;
     color: #fff;
     display: flex;
@@ -91,7 +93,7 @@ nav ul {
     padding: 1em;
 }
 .navbar-menu .menu-link:hover {
-    background: #001d4d;
+    background: #001029;
     border-radius: 20px;
     cursor: pointer;
     transition: ease 0.3s all;
@@ -113,7 +115,7 @@ section p {
 
 /* active section behaviour */
 section.active-class {
-    background: linear-gradient(#001333, #001d4d);
+    background: linear-gradient(#000, #001029);
     border-radius: 10px;
     transition: .5s;
 }
