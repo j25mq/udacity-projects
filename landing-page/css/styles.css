@@ -1,7 +1,48 @@
+/* media queries */
+@media (max-width: 800px) { /* smaller screens */
+    h1 {
+        font-size: 50px;
+        margin: 6em 0em;
+    }
+    h2 {
+        font-size: 30px;
+    }
+    p {
+        font-size: 15px;
+        line-height: 2em;
+    }
+    nav li {
+        font-size: 14px;
+    }
+    nav ul {
+        gap: 5px;
+        flex-direction: column;
+    }
+}
+@media (min-width: 801px) { /* larger screens */
+    h1 {
+        font-size: 60px;
+        margin: 10em 0em;
+    }
+    h2 {
+        font-size: 40px;
+    }
+    p {
+        font-size: 20px;
+        line-height: 3em;
+    }
+    nav li {
+        font-size: 18px;
+    }
+    nav ul {
+        gap: 20px;
+        justify-content: flex-end;
+    }
+}
+
 /* body and wrapper rulesets */
 body {
     background: #010101;
-    /* background-color: black; */
     color: #fff;
     font-family: 'Source Code Pro', monospace;
 }
@@ -14,28 +55,16 @@ main {
 }
 
 /* tpography and font sizes */
-h1 {
-    font-size: 60px;
-    margin: 10em 0em;
-}
 h2 {
     border-bottom: 2px solid #00040a;
-    font-size: 40px;
     padding-bottom: 10px;
     padding-top: 10px;
-}
-p {
-    font-size: 20px;
-    line-height: 3em;
-}
-nav li {
-    font-size: 18px;
 }
 
 /* header */
 .page-header {
     background: #010101;
-    border-bottom: 1px solid #161616;
+    border-bottom: 1px solid #001d4d;
     color: #fff;
     position: fixed;
     top: 0;
@@ -48,20 +77,8 @@ nav ul {
     padding: 10px;
     text-align: center;
 }
-@media (max-width: 800px) { /* smaller screens */
-    nav ul {
-        gap: 10px;
-        flex-direction: column;
-    }
-}
-@media (min-width: 801px) { /* larger screens */
-    nav ul {
-        gap: 20px;
-        justify-content: flex-end;
-    }
-}
 .active {
-    background: #000c1f;
+    background: #001d4d;
     border-radius: 20px;
     color: #fff;
     display: flex;
@@ -74,7 +91,7 @@ nav ul {
     padding: 1em;
 }
 .navbar-menu .menu-link:hover {
-    background: #000c1f;
+    background: #001d4d;
     border-radius: 20px;
     cursor: pointer;
     transition: ease 0.3s all;
@@ -87,7 +104,7 @@ nav ul {
     padding-left: 20px;
     padding-right: 20px;
     margin-bottom: 5em;
-    margin-top: 5em;
+    margin-top: 2em;
 }
 section p {
     display: flex;
@@ -96,7 +113,7 @@ section p {
 
 /* active section behaviour */
 section.active-class {
-    background: linear-gradient(#000103, #00040a);
+    background: linear-gradient(#001333, #001d4d);
     border-radius: 10px;
     transition: .5s;
 }
