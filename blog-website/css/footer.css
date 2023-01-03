@@ -11,6 +11,19 @@
 ul, li {
     list-style: none;
 }
+footer {
+    border-top: 2px solid #bdbdbd;
+    border-radius: 10px;
+}
+
+.footerA {
+    display: flex;
+    justify-content: center;
+}
+ul, li {
+    list-style: none;
+}
+
 /* copyright */
 #copyrightFooter {
     align-items: center;
@@ -20,6 +33,10 @@ ul, li {
     justify-content: center;
     height: 100%;
     width: 100%;
+}
+#copyrightFooter a,
+#copyrightFooter p {
+    font-family: 'Azeret Mono', monospace;
 }
 #copyrightFooter a:hover {
     opacity: .5;
