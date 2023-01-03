@@ -130,3 +130,17 @@ section.active-class {
     text-align: center;
     margin: 0;
 }
+
+/* copyright */
+#copyrightFooter {
+    align-items: center;
+    display: inline-flex;
+    font-family: 'Azeret Mono', monospace;
+    gap: 20px;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
+#copyrightFooter a:hover {
+    opacity: .5;
+}
