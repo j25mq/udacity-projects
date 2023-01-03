@@ -58,6 +58,7 @@ label:active:after {
 
 .darkMode {
     background-color: black;
+	color: white;
     transition: 1s;
 }
 
@@ -70,6 +71,12 @@ label:active:after {
     justify-content: center;
     height: 100%;
     width: 100%;
+}
+#copyrightFooter a,
+#copyrightFooter p {
+    font-family: 'Azeret Mono', monospace;
+    font-size: 15px;
+    text-decoration: none;
 }
 #copyrightFooter a:hover {
     opacity: .5;
