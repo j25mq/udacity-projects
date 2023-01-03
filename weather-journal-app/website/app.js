@@ -8,7 +8,7 @@ const baseURL = 'https://api.openweathermap.org/data/2.5/weather?q=';
 const { request } = require("http");
 
 // event listener added - behaviour when 'generate' button is clicked
-const generate = document.getElementById('generate').addEventListener('click', performAction);
+let generate = document.getElementById('generate').addEventListener('click', performAction);
 const performAction = (e)=>{
     const zipCode = document.getElementById('zip').value;
     const feelings = document.getElementById('feelings').value;
