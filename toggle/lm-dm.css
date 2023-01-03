@@ -60,3 +60,17 @@ label:active:after {
     background-color: black;
     transition: 1s;
 }
+
+/* copyright */
+#copyrightFooter {
+    align-items: center;
+    display: inline-flex;
+    font-family: 'Azeret Mono', monospace;
+    gap: 20px;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
+#copyrightFooter a:hover {
+    opacity: .5;
+}
