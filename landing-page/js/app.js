@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function scroll() {
 
     // create sections
     function createSection(nb) {
@@ -67,7 +67,7 @@ document.addEventListener("DOMContentLoaded", function() {
     for (let i = 1; i <= sectionNb; i++){
         const sec = document.getElementById("sec" + i);
         const section = document.getElementById("section" + i);
-        sec.addEventListener("click", function() {
+        sec.addEventListener("click", function scrollTo() {
             section.scrollIntoView({behavior: "smooth", block: "start"})
         });
     }
