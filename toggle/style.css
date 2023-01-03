@@ -1,0 +1,77 @@
+/* container */
+label {
+	background: transparent;
+	border-radius: 200px;
+	border: 1px solid #c6c6c6;
+	cursor: pointer;
+	display: flex;
+	height: 40px;
+	transition: 0.3s;
+	width: 80px;
+}
+
+/* light mode left white circle */
+label:after {
+	background: linear-gradient(180deg,#c1c1c1,#9d9d9d);
+	border-radius: 180px;
+	box-shadow: 0px 5px 10px rgba(0,0,0,0.2);
+	content: "";
+	height: 30px;
+    left: 5px;
+	position: relative;
+	top: 4px;
+    bottom: 5px;
+	transition: 0.3s;
+	width: 30px;
+}
+
+/* checkbox */
+input {
+	height: 0;
+	visibility: hidden;
+	width: 0;
+}
+
+/* dark mode background */
+input:checked + label {
+	background: transparent;
+}
+
+/* dark mode right black circle */
+input:checked + label:after {
+    background: linear-gradient(180deg,#444444,#1a1a1a);
+	left: 45px;
+}
+
+/* transition when going switching btw the 2 modes */
+label:active:after {
+	width: 45px;
+}
+
+/* dark mode rulesets */
+.darkMode {
+    background-color: black;
+	color: white;
+    transition: 1s;
+}
+
+/* copyright */
+#copyrightFooter {
+    align-items: center;
+    display: inline-flex;
+    font-family: 'Azeret Mono', monospace;
+    gap: 20px;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
+#copyrightFooter a,
+#copyrightFooter p {
+    font-family: 'Azeret Mono', monospace;
+    font-size: 15px;
+	/* color: black; */
+    text-decoration: none;
+}
+#copyrightFooter a:hover {
+    opacity: .5;
+}
