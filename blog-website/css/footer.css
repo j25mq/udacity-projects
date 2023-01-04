@@ -1,6 +1,11 @@
 footer {
     border-top: 2px solid #bdbdbd;
     border-radius: 10px;
+    position: relative;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    /* height: 100px; */
 }
 
 .footerA {
@@ -10,6 +15,7 @@ footer {
 ul, li {
     list-style: none;
 }
+
 /* copyright */
 #copyrightFooter {
     align-items: center;
