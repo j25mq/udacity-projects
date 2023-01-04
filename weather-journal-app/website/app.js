@@ -3,23 +3,22 @@ let d = new Date();
 let newDate = d.getMonth()+'.'+ d.getDate()+'.'+ d.getFullYear();
 
 /* global Variables */
-const apiKey = '<fc02e4422a612704c6e197f245b4eb6c>&units=imperial';
+const apiKey = '<b1b362bc998df24e677314d13dcb9514>';
 const baseURL = 'https://api.openweathermap.org/data/2.5/weather?q=';
-const { request } = require("http");
 
 // event listener added - behaviour when 'generate' button is clicked
-let generate = document.getElementById('generate').addEventListener('click', performAction);
 const performAction = (e)=>{
     const zipCode = document.getElementById('zip').value;
     const feelings = document.getElementById('feelings').value;
-    getWeatherData(`${baseURL}${zipcode}${apiKey}`).then(function(data){
+    getWeatherData(`${baseURL}${zipCode}${apiKey}`).then(function(data){
         postData("http://localhost:5000", {
-            temp: data.main.temp,
+            temp: data.temp,
             data: newDate,
             content: feelings,
         }).then(updateUI);
     });
 };
+let generate = document.getElementById('generate').addEventListener('click', performAction);
 
 // data weather 
 const getWeatherData = async (url) => {
