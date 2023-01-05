@@ -109,3 +109,21 @@ button:focus {
     font-family: 'Oswald', sans-serif;
 
 } 
+
+/* copyright */
+#copyrightFooter {
+    align-items: center;
+    display: inline-flex;
+    font-family: 'Azeret Mono', monospace;
+    gap: 20px;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
+#copyrightFooter a,
+#copyrightFooter p {
+    font-family: 'Azeret Mono', monospace;
+}
+#copyrightFooter a:hover {
+    opacity: .5;
+}
