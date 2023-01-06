@@ -35,11 +35,12 @@ app.get('/all', (req, res)=>{
 });
 
 // post route that addds incoming data to ProjectData
-app.post('/add', (req, res)=>{
-    console.log(req.body);
-    projectData.temp = req.body.temp;
-    projectData.date = req.body.date;
-    projectData.content = req.body.content;
+app.post('/addData', (req,res) => {
+    const data = {
+        temperature: req.body.temp,
+        date: req.body.date,
+        userInput: req.body.content
+    };
+    projectData.push(data);
     res.send(projectData);
-    console.log(projectData);
-})
+});

@@ -1,83 +1,58 @@
 // create a new date instance dynamically with JS
 let d = new Date();
-let newDate = d.getMonth()+'.'+ d.getDate()+'.'+ d.getFullYear();
+let day = d.getDate();
+let month = d.getMonth() + 1;
+let year = d.getFullYear();
+let newDate = `${day}-${month}-${year}`;
 
 /* global Variables */
-const apiKey = '<b1b362bc998df24e677314d13dcb9514>';
+const apiKey = 'b1b362bc998df24e677314d13dcb9514';
 const baseURL = 'https://api.openweathermap.org/data/2.5/weather?q=';
+const zipCode = document.getElementById('zip').value;
+const feelings = document.getElementById('feelings').value;
+const fullUrl = `${baseURL}${zipCode}&appid=${apiKey}`;
 
 // event listener added - behaviour when 'generate' button is clicked
 const performAction = (e)=>{
-    const zipCode = document.getElementById('zip').value;
-    const feelings = document.getElementById('feelings').value;
-    getWeatherData(`${baseURL}${zipCode}${apiKey}`).then(function(data){
-        postData("http://localhost:5000", {
-            temp: data.temp,
-            data: newDate,
-            content: feelings,
-        }).then(updateUI);
-    });
+    getWeatherData(fullUrl).then(function(data){
+        console.log("(getWeatherData.then) Processing...", data);
+    
+        //date output
+        let d = new Date();
+        let day = d.getDate();
+        let month = d.getMonth() + 1;
+        let year = d.getFullYear();
+        let newDate = `${day}-${month}-${year}`;
+        let msgForDate = `Today's date: ${newDate}.`;
+        const targetForDate = document.getElementById('date');
+        targetForDate.innerHTML = `<p>${msgForDate}</p>`;
+
+        // temp output
+        const temp = data.main.temp;
+        const msgForTemp = `Forecast temperature is: ${temp}.`;
+        const targetForTemp = document.getElementById('temp');
+        targetForTemp.innerHTML = `<p>${msgForTemp}</p>`;
+
+        // feel output - content
+        const input = data.main.feel;
+        const msgForFeel = `User's feelings: ${input}.`;
+        const targetForFeel = document.getElementById('content');
+        targetForFeel.innerHTML = `<p>${msgForFeel}</p>`;
+
+    })
+    .catch(err => alert("Please enter a correct zip code."))
 };
+
 let generate = document.getElementById('generate').addEventListener('click', performAction);
 
-// data weather 
+// get data weather 
 const getWeatherData = async (url) => {
+    console.log("(getWeatherData) Calling url=", url);
     const response = await fetch(url);
     try {
         const data = await response.json();
-        console.log(data);
+        console.log("(getWeatherData) Receiving data=", data);
         return data;
-    } catch (error) {
-        console.log("error", error);
-    }
-};
-  
-// get route that returns the projectData object to server code 
-const getData = async () => {
-    const request = await fetch(url, { 
-        method: 'GET', 
-    });
-    try {
-        const allData = await request.json()
-        document.getElementById('temp').innerHTML = Math.round(allData.temp) + 'degrees';
-        document.getElementById('content').innerHTML = allData.feel;
-        document.getElementById('date').innerHTML = allData.date;
-        return allData;
-    } catch (error) {
-        console.log('error', error);
-        document.getElementById('content').innerHTML = 'Unable to get data from server.';
-    }
-}
-
-// post route that adds incoming data 
-const postData = async (url = "", data = {}) => {
-    const response = await fetch(url, {
-        method: "POST",
-        credentials: "same-origin",
-        headers: {
-            "Content-Type": "application/json",
-            Accept: "application/json",
-            "Access-Control-Allow-Origin": "http://localhost:5000/",
-        },
-        body: JSON.stringify(data),
-    });
-    try {
-        const newData = await response.json();
-        console.log(newData);
-        return newData;
-    } catch (error) {
-        console.log("error", error);
-    }
-};
-  
-// dynamic ui
-const updateUI = async () => {
-    const request = await fetch("http://localhost:5000/all");
-    try {
-        const allData = await request.json();
-        document.getElementById("date").innerHTML = allData.date;
-        document.getElementById("temp").innerHTML = allData.temp;
-        document.getElementById("content").innerHTML = allData.content;
     } catch (error) {
         console.log("error", error);
     }
