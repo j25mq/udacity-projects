@@ -127,3 +127,9 @@ button:focus {
 #copyrightFooter a:hover {
     opacity: .5;
 }
+@media (max-width: 800px) {
+    #copyrightFooter {
+        display: flex;
+        flex-direction: column;
+    }
+}
