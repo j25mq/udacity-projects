@@ -18,7 +18,7 @@
     text-align: center;
 }
 .blogBox:hover {
-    transform: scale(1.05);
+    transform: scale(1.01);
     transition: .2s;
 }
 .blogTitle {
@@ -45,8 +45,6 @@
         grid-template-columns: repeat(3, 30%);
         padding-left: 10%;
         padding-right: 10%;
-        position: relative;
-
     }
     .blogBox {
         padding-left: 20px;

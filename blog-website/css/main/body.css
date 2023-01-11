@@ -15,9 +15,9 @@ body {
 
 /* buttons, links, pre, input */ 
 button {
-    border: 1px solid #bdbdbd;
+    border: 0 none;
     border-radius: 10px;
-    background-color: #d5d6d7;
+    background-color: #e5e5e5;
     font-family: 'Roboto Mono', monospace;
     text-transform: uppercase;
 }
@@ -43,9 +43,9 @@ button:hover svg {
     color: black;
 }
 button:hover {
-    background-color: #8f9ab9;
     cursor: pointer;
-    transition: .2s;
+    transition: .5s;
+    opacity: .8;
 } 
 svg:hover {
     color: #13234f77;
@@ -55,9 +55,6 @@ svg:hover {
 .svgNoHover:hover {
     color: black;
     cursor: default;
-}
-.footerContainer a:hover {
-    color: #8f9ab9;
 }
 
 
