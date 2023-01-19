@@ -4,4 +4,4 @@ let json = {
     'time': 'now'
 }
 
-module.exports = json
+module.exports = json;

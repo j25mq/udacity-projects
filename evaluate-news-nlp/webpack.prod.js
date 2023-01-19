@@ -1,8 +1,8 @@
 const path = require('path');
 const webpack = require('webpack');
-const HtmlWebPackPlugin = require("html-webpack-plugin");
+const HtmlWebPackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-// const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const WorkboxPlugin = require('workbox-webpack-plugin');
 
@@ -21,20 +21,20 @@ module.exports = {
     module: {
         rules: [
             {
-                test: '/\.js$/',
-                exclude: /node_modules/,
+                test: /\.m?js$/,
+                exclude: /(node_modules|bower_components)/,
                 use: {
                     loader: 'babel-loader',
                     options: {
-                      presets: ['@babel/preset-env'],
+                    presets: ['@babel/preset-env'],
                     },
                 },
             },
             {
-                test: /.scss$/,
-                use: [ 'style-loader', 'css-loader', 'sass-loader' ]
-            }
-        ]
+                test: /\.scss$/,
+                use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
+            },
+        ],
     },
     plugins: [
         new HtmlWebPackPlugin({
