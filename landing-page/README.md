@@ -75,3 +75,4 @@ Font used: 'Source Code Pro', monospace
 https://user-images.githubusercontent.com/107758701/208710967-498559c5-ef49-4dad-b013-2decc6e98182.mov
 
 # [Code owners](#project-presentation)
+https://www.juliemiquelard.com
