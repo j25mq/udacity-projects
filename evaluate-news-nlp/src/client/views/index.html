@@ -3,22 +3,24 @@
     <head>
         <meta charset="utf-8">
         <title>Evaluate News Article </title>
-        <link rel="stylesheet" href="./src/client/styles/resets.scss">
+        <!-- <link rel="stylesheet" href="./src/client/styles/resets.scss">
         <link rel="stylesheet" href="./src/client/styles/base.scss">
         <link rel="stylesheet" href="./src/client/styles/header.scss">
         <link rel="stylesheet" href="./src/client/styles/form.scss">
-        <link rel="stylesheet" href="./src/client/styles/footer.scss">
+        <link rel="stylesheet" href="./src/client/styles/footer.scss"> -->
+        <link href="style.scss" rel="stylesheet" type="text/css">
         <script src="./src/client/js/formHandler.js"></script>
     </head>
     <body>
         <header>
             <div>Analyze article's polarity with Natural Language Processing</div>
         </header>
-        <main>
+        <main id="wrapper">
             <section>
-                <form class="" onsubmit="return Client.handleSubmit(event)">
-                    <label for="name" class="url-label">Enter article's URL of your choice below</label>
-                    <input class="url-input" type="text" name="input" value="" placeholder="URL"/>
+                <form class="form" onsubmit="return Client.handleSubmit(event)">
+                    <label for="name" class="url-label">Enter article's URL of your choice below:</label>
+                    <br>
+                    <input class="input" type="text" name="input" value="" placeholder="URL"/>
                     <input type="submit" class="btn" name="" value="Analyze" onclick="return Client.handleSubmit(event)" onsubmit="return Client.handleSubmit(event)"/>
                 </form>
             </section>
@@ -29,7 +31,6 @@
         <script>
             // check that service workers are supported
             if ('serviceWorker' in navigator) {
-                // use the window load event to keep the page load performant
                 window.addEventListener('load', () => {
                 navigator.serviceWorker.register('/service-worker.js');
                 });

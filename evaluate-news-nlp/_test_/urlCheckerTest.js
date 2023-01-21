@@ -1,19 +1,19 @@
-import { checkUrl } from '../src/client/js/urlChecker';
+import { validateURL } from '/src/client/js/urlChecker';
 
-describe('Testing the checkUrl function', () => {
-    test('Testing a valid url', () => {
-        expect(checkUrl('https://www.udacity.com/')).toBe(true);
+describe('Testing the validateURL function...', () => {
+    test('This URL is valid (correct url format):', () => {
+        expect(validateURL('https://www.udacity.com/')).toBe(true);
     });
 
-    test('Testing invalid url', () => {
-        expect(checkUrl('udacity')).toBe(false);
+    test('This URL is invalid (missing url format):', () => {
+        expect(validateURL('udacity')).toBe(false);
     });
 
-    test('Testing url with space', () => {
-        expect(checkUrl('https://www.udacity.com/')).toBe(false);
+    test('This URL is invalid (space added):', () => {
+        expect(validateURL('https://www.uda city.com/')).toBe(false);
     });
 
-    test('Testing url without www', () => {
-        expect(checkUrl('udacity.com/')).toBe(false);
+    test('This URL is invalid (missing www):', () => {
+        expect(validateURL('udacity.com/')).toBe(false);
     });
 });
