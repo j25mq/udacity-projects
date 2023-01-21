@@ -1,19 +1,17 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <title>Toggle Light/Dark Mode</title>
-        <link rel="stylesheet" href="style.css">
+	<head>
+		<meta charset="utf-8">
+		<link href="style.css" rel="stylesheet" type="text/css">
+		<title>Toggle button</title>
+		<link href="toggle.svg" rel="icon">
 	</head>
 	<body>
-		<input type="checkbox" id="darkmode-toggle" onclick="switchMode()"/>
-		<label for="darkmode-toggle"></label>
-		<script>
-			function switchMode() {
-				const element = document.body;
-				element.classList.toggle("darkMode");
-			}
-		</script>
+		<p class="title">Light/Dark Toggle Button</p>	
+		<div id="wrapper">
+			<input type="checkbox" id="darkmode-toggle" onclick="toggleDark()"/>
+			<label for="darkmode-toggle"></label>
+		</div>
 		<footer>
 			<div id="copyrightFooter">
 				<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-c-circle" viewBox="0 0 16 16">
@@ -28,5 +26,6 @@
 				</div>
 			</div>
 		</footer>
+		<script src="app.js"></script>
 	</body>
 </html>
