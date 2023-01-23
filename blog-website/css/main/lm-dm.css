@@ -1,27 +1,28 @@
 /* container */
 .mainContainer label {
-	background: transparent;
+	background: #eeeeee;
 	border-radius: 200px;
-	border: 1px solid #c6c6c6;
+	box-shadow: 5px 5px 10px 1px #c1c1c1;
 	cursor: pointer;
 	display: flex;
 	height: 40px;
-	transition: 0.3s;
+	transition: .3s;
 	width: 80px;
 }
-
+body.dark label {
+	box-shadow: 5px 5px 10px 1px #1a1a1a;
+}
 /* light mode left white circle */
 label:after {
-	background: linear-gradient(180deg,#c1c1c1,#9d9d9d);
+	background: linear-gradient(180deg,#c1c1c1,#7d7d7d);
 	border-radius: 180px;
-	box-shadow: 0px 5px 10px rgba(0,0,0,0.2);
 	content: "";
 	height: 30px;
     left: 5px;
 	position: relative;
 	top: 4px;
     bottom: 5px;
-	transition: 0.3s;
+	transition: .3s;
 	width: 30px;
 }
 
@@ -39,13 +40,30 @@ input:checked + label {
 
 /* dark mode right black circle */
 input:checked + label:after {
-    background: linear-gradient(180deg,#444444,#1a1a1a);
+    background: linear-gradient(180deg,#5b5b5b,#323232);
 	left: 45px;
 }
 
 /* transition when going from dark to light mode */
 label:active:after {
 	width: 45px;
+}
+
+label:hover {
+	transform: scale(1.01);
+	transition: .5s;
+}
+
+/* rulesets body for dark mode */
+body {
+	background-color: white;
+	transition: .5s;
+}
+body.dark {
+	background-color: black;
+}
+body.dark p {
+	color: white;
 }
 
 /* dark-mode rulesets */
@@ -65,18 +83,20 @@ label:active:after {
 .dm .search:hover,
 .dm textarea:hover,
 .dm .footerContainer a:hover {
-    color: #8f9ab9;
+    opacity: .8;
+	transition: .5s;
 }
 .dm button:hover {
-	background-color: #8f9ab9;
-}
+    opacity: .8;
+	transition: .5s;}
 .dm button,
 .dm figcaption {
 	background-color: #d5d6d7;
 	color: black;
 }
 .dm .searchBar:hover {
-    border-color: #8f9ab9;
+    opacity: .8;
+	transition: .5s;
 }
 .dm input,
 .dm textarea {

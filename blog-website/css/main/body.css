@@ -48,9 +48,9 @@ button:hover {
     opacity: .8;
 } 
 svg:hover {
-    color: #13234f77;
     cursor: pointer;
-    transition: .2s;
+    transition: .5s;
+    opacity: .8;
 }
 .svgNoHover:hover {
     color: black;
