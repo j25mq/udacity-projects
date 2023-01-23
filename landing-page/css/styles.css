@@ -2,10 +2,11 @@
 @media (max-width: 800px) { /* smaller screens */
     h1 {
         font-size: 50px;
-        margin: 6em 0em;
+        margin: 10em 0;
     }
     h2 {
         font-size: 30px;
+        margin: 10em 0 5em 0;
     }
     p {
         font-size: 15px;
@@ -26,6 +27,7 @@
     }
     h2 {
         font-size: 40px;
+        margin: 5em 0 5em 0;
     }
     p {
         font-size: 20px;
@@ -48,17 +50,13 @@ body {
 }
 main {
     background: #010101;
-    padding-bottom: 20px;
-    padding-left: 10%;
-    padding-right: 10%;
-    padding-top: 20px;
+    padding: 0 10% 0 10%;
 }
 
-/* tpography and font sizes */
+/* typography and font sizes */
 h2 {
     border-bottom: 2px solid #00040a;
-    padding-bottom: 10px;
-    padding-top: 10px;
+    padding: 10px 0 10px 0;
 }
 
 /* header */
@@ -99,12 +97,7 @@ nav ul {
 
 /* landing container */
 .landing-container {
-    padding-bottom: 10px;
-    padding-top: 10px;
-    padding-left: 20px;
-    padding-right: 20px;
-    margin-bottom: 5em;
-    margin-top: 2em;
+    padding: 10px 20px 10px 20px;
 }
 section p {
     display: flex;
@@ -114,8 +107,8 @@ section p {
 /* active section behaviour */
 section.active-class {
     background: linear-gradient(#000103, #00040a);
-    border-radius: 10px;
-    transition: .5s;
+    border-radius: 5px;
+    transition: .2s;
 }
 
 /* footer */
