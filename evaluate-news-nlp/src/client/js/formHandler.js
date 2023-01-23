@@ -11,18 +11,9 @@ const handleSubmit = (event) => {
         alert('An error occurred. Try again.');
         return;
     }
+    displayResults(data);
 };
 
-// get response
-// const postData = async (url, formUrl) => {
-//     const res = await fetch(url, {
-//         method: 'POST',
-//         headers: { 'Content-Type': 'application/json' },
-//         body: JSON.stringify({ formUrl }),
-//     })
-//     .then((res) => res.json())
-//     .then((data) => displayResults(data));
-// };
 const requestOptions = {
     method: 'POST',
     body: formdata,
@@ -30,13 +21,14 @@ const requestOptions = {
 };
 const postData = fetch("https://api.meaningcloud.com/documentstructure-1.0", requestOptions)
     .then(response => ({
-    status: response.status, 
-    body: response.json()
+        status: response.status, 
+        body: response.json()
     }))
     .then(({ status, body }) => console.log(status, body))
     .catch(error => console.log('error', error));
 
-// display results in resulsts section
+
+// display results in results section
 const displayResults = (data) => {
     if (data) {
         results.innerHTML = `
@@ -71,5 +63,5 @@ const describePolarity = (score) => {
     }
     return polarity;
 };
-  
+
 export { handleSubmit, describePolarity };
