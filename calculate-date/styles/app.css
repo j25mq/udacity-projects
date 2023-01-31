@@ -1,0 +1,89 @@
+@import 'main.css';
+
+@media (max-width: 799px) { /* smaller screens */
+    #container {
+        display: flex;
+        flex-direction: column;
+        gap: 0 20px;
+        margin: 20px 10% 20px 10%;
+        height: 100%;
+    }
+    #app, 
+    #holder {
+        margin: 50px 0;
+    }
+}
+@media (min-width: 800px) { /* large screens */
+    #container {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        gap: 0 20px;
+        margin: 20px 20% 20px 20%;
+        height: 100%;
+    }
+    #app, 
+    #holder {
+        margin: 200px 0;
+    }
+}
+
+#generate, 
+#refresh {
+    align-items: center;
+    border: 0 none;
+    border-radius: 5px;
+    font-family: 'Space Mono', monospace;
+    height: 50px;
+    justify-content: center;
+    padding: 10px;
+    text-transform: uppercase;
+    width: 100%;
+}
+
+#app, 
+#holder {
+    align-items: center;
+    background-color: #f4f4f4;
+    box-shadow: -5px 5px 20px 10px #dbdbdb;
+    border-radius: 10px;
+    display: flex;
+    padding: 10px 20px;
+    justify-content: center;
+}
+
+/* app */
+#app {
+    background-color: #f4f4f4;
+}
+#app:hover {
+    transition: .5s;
+    transform: scale(1.003);
+}
+#generate {
+    background-color: #d7d7d7;
+    margin: 20px 0;
+}
+#generate:hover,
+#refresh:hover {
+    background-color: #8ea8b9;
+    cursor: pointer;
+    transition: .5s;
+}
+
+/* holder */
+#holder {
+    background-color: #8ea8b953;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.output {
+    height: 150px;
+}
+#dateOutput,
+#nbOfDaysOutput {
+    padding-left: 20px;
+}
+#refresh {
+    background-color: transparent;
+}

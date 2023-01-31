@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono&display=swap');
+
+@media (max-width: 799px) { /* smaller screens */
+    input,
+    #app #generate {
+        font-size: 15px;
+    }
+    label {
+        font-size: 18px;
+    }
+}
+@media (min-width: 800px) { /* large screens */
+    input,
+    #app #generate {
+        font-size: 18px;
+    }
+    label {
+        font-size: 20px;
+    }
+}
+
+body {
+    background: #fff;
+    font-family: 'Space Mono', monospace;
+}
+input[type=date] {
+    background: #e8e8e8;
+    border: none;
+    border-radius: 5px;
+    color: black;
+    font-family: 'Space Mono', monospace;
+    height: 50px;
+    text-decoration: none;
+    width: 100%;    
+}
+input:hover {
+    cursor: pointer;
+    transition: .5s;
+    opacity: 0.8;
+}
+input:focus {
+    outline: none;
+    cursor: text;
+}
