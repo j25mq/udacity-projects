@@ -32,6 +32,7 @@
     align-items: center;
     border: 0 none;
     border-radius: 5px;
+    color: black;
     font-family: 'Space Mono', monospace;
     height: 50px;
     justify-content: center;
@@ -47,6 +48,7 @@
     box-shadow: -5px 5px 20px 10px #dbdbdb;
     border-radius: 10px;
     display: flex;
+    text-align: center;
     padding: 10px 20px;
     justify-content: center;
 }
@@ -72,7 +74,7 @@
 
 /* holder */
 #holder {
-    background-color: #8ea8b953;
+    background-color: #dce4e9;
     display: flex;
     flex-direction: column;
     justify-content: center;
