@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono&display=swap');
+
+@media (max-width: 799px) { /* smaller screens */
+    input,
+    textarea,
+    #entryHolder,
+    ::placeholder,
+    #app button {
+        font-size: 15px;
+    }
+    label {
+        font-size: 18px;
+    }
+}
+@media (min-width: 800px) { /* large screens */
+    input,
+    textarea,
+    #entryHolder,
+    ::placeholder,
+    #app1 button {
+        font-size: 18px;
+    }
+    label {
+        font-size: 20px;
+    }
+}
+
+body {
+    background: #fff;
+    font-family: 'Space Mono', monospace;
+}
+a,
+input {
+    color: black;
+    font-family: 'Space Mono', monospace;
+    text-decoration: none;
+}
+button {
+    align-items: center;
+    background-color: #d7d7d7;
+    border: 0 none;
+    border-radius: 5px;
+    font-family: 'Space Mono', monospace;
+    height: 50px;
+    justify-content: center;
+    padding: 10px;
+    text-transform: uppercase;
+}
+button:hover:disabled {
+    cursor: not-allowed;
+}
+button:hover {
+    background-color: #8ea8b9;
+    cursor: pointer;
+    transition: .5s;
+}
+textarea,
+input,
+input[type=date],
+::placeholder {
+    background: #e8e8e8;
+    border: none;
+    border-radius: 5px;
+    color: black;
+    height: 50px;
+    padding: 10px;
+    width: 100%;
+    max-width: 100%;
+}
+textarea:hover,
+input:hover {
+    cursor: pointer;
+    transition: .5s;
+    opacity: 0.8;
+}
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    border: 1px solid #8ea8b9;
+    outline: none;
+    cursor: text;
+}
+input[type=date] {
+    color: rgb(134, 134, 134);
+}
+.required:after {
+    content:" *";
+    color: #ab1b11;
+}
