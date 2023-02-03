@@ -1,7 +1,7 @@
-import './css/header.scss';
-import './css/form.scss';
-import './css/footer.scss';
-import './css/main.scss';
+import './styles/main.scss';
+import './styles/app.scss';
+import './styles/footer.scss';
+import './styles/header.scss';
 
 // import { validateURL } from './js/urlChecker';
 // import { handleSubmit } from './js/formHandler';
