@@ -1,0 +1,156 @@
+@import 'main.css';
+
+@media (max-width: 800px) { /* small screens */
+    #app1 {
+        margin: 15px 10%;
+    }
+    .buttons {
+        grid-template-columns: 60% 40%;
+    }
+    .buttons #generate {
+        margin-right: 10px;
+    }
+    .buttons #reset {
+        margin-left: 10px;
+    }
+    #app2 {
+        grid-template-columns: repeat(0, 1fr);
+        margin: 20px 5%;
+    }
+    .appContent {
+        padding: 5px 10px;
+        width: 300px;
+    }
+}
+@media (min-width: 801px)  and (max-width: 1349px) { /* medium screens */
+    #app1 {
+        margin: 20px 15%;
+    }
+    .buttons {
+        grid-template-columns: 60% 40%;
+    }
+    .buttons #generate {
+        margin-right: 15px;
+    }
+    .buttons #reset {
+        margin-left: 15px;
+    }
+    #app2 {
+        grid-template-columns: repeat(2, 1fr);
+        margin: 20px 10%;
+    }
+    .appContent {
+        padding: 10px 20px;
+        width: 315px;
+    }
+}
+@media (min-width: 1350px) { /* large screens */
+    #app1 {
+        margin: 30px 25%;
+    }
+    .buttons {
+        grid-template-columns: 70% 30%;
+    }
+    .buttons #generate {
+        margin-right: 20px;
+    }
+    .buttons #reset {
+        margin-left: 20px;
+    }
+    #app2 {
+        grid-template-columns: repeat(3, 1fr);
+        margin: 20px 10%;
+    }
+    .appContent {
+        padding: 10px 20px;
+        width: 350px;
+    }
+}
+
+/* app 1 */
+#app1 {
+    border-radius: 5px;
+    box-shadow: -5px 5px 20px 10px #dbdbdb;
+    height: 100%;
+    padding: 0 40px;
+    text-align: center;
+}
+#app1:hover {
+    transform: scale(1.001);
+    transition: .5s;
+}
+#app1 .holder {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px 0;
+}
+.buttons {
+    display: grid;
+    width: 100%;
+}
+#required {
+    display: flex;
+    font-size: 12px;
+    justify-content: flex-start;
+    padding-bottom: 10px;
+}
+#newTripAdded {
+    font-size: 20px;
+    padding: 0 0 20px 0;
+}
+#newTripAdded a {
+    color: #9babc5;
+}
+
+/* app 2 */
+#app2 {
+    display: grid;
+    gap: 40px;
+    justify-content: center;
+}
+.tripNbOutput {
+    align-items: center;
+    display: flex;
+    font-size: 20px;
+    font-weight: bold;
+    justify-content: center;
+}
+.appContent {
+    box-shadow: -5px 5px 20px 10px #dbdbdb;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    font-size: 15px;
+    text-align: center;
+}
+.appContent:hover {
+    transform: scale(1.001);
+    transition: .5s;
+}
+#nbOfTrips {
+    font-size: 16px;
+    text-align: center;
+}
+#app2 .holder {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 5px 0;
+    height:1 00%;
+}
+#delete {
+    align-items: center;
+    background-color: #d7d7d7;
+    border: 0 none;
+    border-radius: 5px;
+    justify-content: center;
+    padding: 10px;
+}
+#delete:hover {
+    background-color: #b83f35;
+    cursor: pointer;
+    transition: .5s;
+}

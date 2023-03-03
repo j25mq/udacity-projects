@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noticia+Text&display=swap');
+@media (max-width: 799px) { /* smaller screens */
+    input,
+    textarea,
+    ::placeholder,
+    button {
+        font-size: 12px;
+    }
+    label {
+        font-size: 15px;
+    }
+}
+@media (min-width: 800px) { /* large screens */
+    input,
+    textarea,
+    ::placeholder,
+    button {
+        font-size: 15px;
+    }
+    label {
+        font-size: 20px;
+    }
+}
+
+body {
+    background: #e6e6e6;
+    font-family: 'Noticia Text', serif;
+    scrollbar-width: none;
+}
+a,
+input,
+button {
+    color: black;
+    font-family: 'Noticia Text', serif;
+    text-decoration: none;
+}
+button {
+    align-items: center;
+    border: 0 none;
+    border-radius: 5px;
+    font-family: 'Noticia Text', serif;
+    font-weight: bold;
+    letter-spacing: .5em;
+    height: 50px;
+    justify-content: center;
+    padding: 10px;
+    text-transform: uppercase;
+}
+button:hover {
+    cursor: pointer;
+    transition: .5s;
+}
+button:hover:disabled {
+    cursor: not-allowed;
+    transition: .5s;
+}
+button:disabled {
+    transition: .5s;
+    opacity: .8;
+}
+#pinkbtn,
+#generate {
+    background-color: #ca6365;
+}
+#headerbtn {
+    background-color: #9babc5;
+}
+#reset {
+    background-color: #b5c4a1;
+}
+#pinkbtn:hover,
+#generate:hover,
+#reset:hover,
+#headerbtn:hover {
+    opacity: .8;
+}
+textarea,
+input,
+input[type=date],
+::placeholder {
+    background: #dfdfdf;
+    border: none;
+    border-radius: 5px;
+    color: black;
+    padding: 10px;    
+    overflow: hidden;    
+    height: 50px;    
+    min-height: 50px;
+    max-height: 100px;
+    width: 100%;
+    min-width: 100%;
+    max-width: 100%;
+}
+textarea:hover,
+input:hover {
+    cursor: pointer;
+    transition: .5s;
+    opacity: 0.8;
+}
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    border: 1px solid #8ea8b9;
+    outline: none;
+    cursor: text;
+}
+input[type=date] {
+    color: rgb(134, 134, 134);
+}
+.required:after {
+    content:" *";
+    color: #ab1b11;
+}
