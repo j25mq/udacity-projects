@@ -12,4 +12,5 @@ If you are interested in testing your code as you go, you can use `tests.js` as 
 # [Code owners](#code-owners)
 Website: https://www.juliemiquelard.com/ <br>
 Github: https://github.com/j25mq <br>
-Instagram: https://www.instagram.com/j25mq/
+Instagram: https://www.instagram.com/j25mq/ <br>
+Project led with Udacity
