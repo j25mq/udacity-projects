@@ -68,6 +68,7 @@
 
 * {
     box-sizing: border-box;
+    scrollbar-width: none;
 }
 body {
     background-color: white;
