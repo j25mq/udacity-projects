@@ -1,0 +1,108 @@
+/* container */
+.mainContainer label {
+	background: #eeeeee;
+	border-radius: 200px;
+	box-shadow: 5px 5px 10px 1px #848484;
+	cursor: pointer;
+	display: flex;
+	height: 40px;
+	transition: .3s;
+	width: 80px;
+}
+body.dark label {
+	box-shadow: 5px 5px 10px 1px #1a1a1a;
+}
+/* light mode left white circle */
+label:after {
+	background: linear-gradient(180deg,#c1c1c1,#7d7d7d);
+	border-radius: 180px;
+	content: "";
+	height: 30px;
+    left: 5px;
+	position: relative;
+	top: 4px;
+    bottom: 5px;
+	transition: .3s;
+	width: 30px;
+}
+
+/* checkbox */
+.mainContainer input {
+	height: 0;
+	visibility: hidden;
+	width: 0;
+}
+
+/* dark mode background */
+input:checked + label {
+	background: transparent;
+}
+
+/* dark mode right black circle */
+input:checked + label:after {
+    background: linear-gradient(180deg,#5b5b5b,#323232);
+	left: 45px;
+}
+
+/* transition when going from dark to light mode */
+label:active:after {
+	width: 45px;
+}
+
+label:hover {
+	transform: scale(1.01);
+	transition: .5s;
+}
+
+/* rulesets body for dark mode */
+body {
+	background-color: white;
+	transition: .5s;
+}
+body.dark {
+	background-color: #1e1e1e;
+}
+body.dark p {
+	color: white;
+}
+
+/* dark-mode rulesets */
+.dm {
+    background-color: #1e1e1e;
+    color: white;
+    transition: 1s;
+}
+.dm .headerTitle,
+.dm svg,
+.dm .svgNoHover:hover,
+.dm .footerContainer a,
+.dm textarea {
+    color: white;
+}
+.dm svg:hover,
+.dm .search:hover,
+.dm textarea:hover,
+.dm .footerContainer a:hover {
+    opacity: .8;
+	transition: .5s;
+}
+.dm button:hover {
+    opacity: .8;
+	transition: .5s;}
+.dm button,
+.dm figcaption {
+	background-color: #d5d6d7;
+	color: #1e1e1e;
+}
+.dm .searchBar:hover {
+    opacity: .8;
+	transition: .5s;
+}
+.dm input,
+.dm textarea {
+	background-color: transparent;
+}
+.dm .blogBox,
+.dm .socialNetworks {
+    box-shadow: 2px 10px 20px #555555;
+}

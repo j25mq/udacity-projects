@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap'); /* h1, h2, h3, h4 */
+@import url('https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap'); /* p */
+@import url('https://fonts.googleapis.com/css2?family=Cutive+Mono&display=swap'); /* input, textarea */
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text&display=swap'); /* header title */ 
+@import url('https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Gloria+Hallelujah&family=Permanent+Marker&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text&display=swap');
+
+@media (min-width: 450px) { /* medium to large screen */
+    h1 {
+        font-size: 40px;
+    }
+    h2 {
+        font-size: 36px;
+    }
+    h3 {
+        font-size: 32px;
+    }
+    h4 { /* date and cat txt */
+        font-size: 14px;
+    }
+    p {
+        font-size: 16px;
+        text-align: justify;
+    }
+    figcaption {
+        font-size: 14px;
+    }
+    button {
+        height: 45px;
+        font-size: 16px;
+        width: 180px;
+    }
+    .arrowIcon {
+        height: 40px;
+        width: 40px;
+    }
+}
+
+@media (max-width: 450px) { /* small screen */
+    h1 {
+        font-size: 20px;
+    }
+    h2 {
+        font-size: 16px;
+    }
+    h3 {
+        font-size: 15px;
+    }
+    h4 { /* date and cat txt */
+        font-size: 10px;
+    }
+    p {
+        font-size: 12px;
+    }
+    figcaption {
+        font-size: 10px;
+    }
+    button {
+        height: 40px;
+        font-size: 12px;
+        width: 85px;
+    }
+    .arrowIcon {
+        height: 30px;
+        width: 30px;
+    }
+}
+
+* {
+    box-sizing: border-box;
+}
+body {
+    background-color: white;
+}
+#wrapper {
+    padding: 20px !important; 
+}
+
+/* buttons, links, pre, input */ 
+button {
+    border: 0 none;
+    border-radius: 10px;
+    background-color: #e5e5e5;
+    font-family: 'Roboto Mono', monospace;
+    text-transform: uppercase;
+}
+a {
+    color: black;
+    font-weight: light;
+    text-decoration: none;
+}
+pre {
+    border-bottom: 1px solid #8f9ab9;
+    border-right: 1px solid #8f9ab9;
+    border-bottom-right-radius: 10px;
+    padding-right: 10px;
+}
+.mainContainer input {
+    outline: none;
+    visibility: hidden;
+}
+
+/* typo */
+h1, 
+h2, 
+h3, 
+h4 {
+    font-family: 'Permanent Marker', cursive;
+}
+h4 {
+    font-weight: 100;
+}
+p,
+figcaption,
+footer a {
+    font-family: 'Gloria Hallelujah', cursive;
+    text-align: justify;
+}
+figcaption {
+    background-color: #d5d6d7;
+    opacity: 0.8;
+}
+input, 
+textarea {
+    font-family: 'Cutive Mono', monospace;
+}
+
+/* hover */ 
+a:hover,
+button:hover svg {
+    color: black;
+}
+button:hover {
+    cursor: pointer;
+    transition: .5s;
+    opacity: .8;
+} 
+svg:hover {
+    cursor: pointer;
+    transition: .5s;
+    opacity: .8;
+}
+.svgNoHover:hover {
+    color: black;
+    cursor: default;
+}
+
+/* icons */
+.accountIcon {
+    height: 43px;
+    width: 43px;
+}
+.plusIcon,
+.searchIcon,
+.locationIcon,
+.buildingIcon {
+    height: 16px;
+    width: 16px;
+}
+.dotsIcon {
+    height: 20px;
+    width: 20px;
+}
+.avatarIcon {
+    height: 100px;
+    width: 75px;
+}
+.socialIcons {
+    height: 32px;
+    width: 32px;
+}

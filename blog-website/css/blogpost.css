@@ -1,0 +1,122 @@
+@import "index.css";
+
+/* blog post content */
+.arrow {
+    float: left;
+}
+.headings {
+    text-align: left;
+}
+.articleBody {
+    align-items: center;
+    justify-content: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.imageBlogPost {
+    align-items: center;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    width: 100%;
+}
+.imageCaption {
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    display: flex;
+    padding: 10px;
+    width: 100%;
+}
+.subheadingsGrid {
+    column-gap: 20px; 
+    justify-content: center;
+    text-align: center;
+}
+.subheadingsGrid pre { 
+    display: flex;
+    font-size: 12px;
+    justify-content: center;
+    text-align: left;
+    width: fit-content;
+}
+
+/* author section */
+.authorContainer {
+    display: flex;
+    gap: 10%;
+    justify-content: center;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.abtAuthor {
+    border-radius: 10px;
+    box-shadow: 2px 10px 20px #bdbdbd;
+    height: fit-content;
+    padding: 20px;
+    text-align: left;
+}
+.iconsSocials {
+    padding: 10px;
+    text-align: center;
+}
+.avatar {
+    display: flex;
+    float: right;
+}
+
+@media (min-width: 850px) { /* large screen */
+    /* blog post content */
+    .arrow {
+        padding: 20px;
+    }
+    .articleBody {
+        padding-left: 15%;
+        padding-right: 15%;
+    }
+    .subheadingsGrid {
+        display: grid;
+        grid-template-areas: "topLeft topRight" "bottomLeft bottomRight";
+    }
+    .topLeft {
+        grid-area: topLeft;
+    }
+    .topRight {
+        grid-area: topRight;
+    }
+    .bottomLeft {
+        grid-area: bottomLeft;
+    }
+    .bottomRight {
+        grid-area: bottomRight;
+    }
+
+    /* author section */
+    .authorContainer {
+        padding-left: 20%;
+        padding-right: 20%;
+    }
+}
+
+@media (max-width: 850px) { /* small to medium screen */
+    /* blog post content */
+    .arrow {
+        padding: 10px;
+    }
+    .articleBody {
+        padding-left: 10%;
+        padding-right: 10%;
+    }
+    .subheadingsGrid {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    /* author section */
+    .authorContainer {
+        padding-left: 10%;
+        padding-right: 10%;
+    }
+}

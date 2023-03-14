@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Blog Post</title>
+        <link rel="stylesheet" href="css/blogpost.css?t=2">
+        <link rel="stylesheet" href="css/lm-dm.css?t=1">
+    </head>
+    <body>
+        <div class="mainContainer">
+            <div class="leftContainer">
+                <input type="checkbox" id="darkmode-toggle" onclick="toggleDark()"/>
+                <label for="darkmode-toggle"></label>
+            </div>
+            <div class="centerContainer">
+                <a href="index.html" target="_self">
+                    <h1 class="headerTitle">ThisISABlog</h1>
+                </a>
+            </div>
+            <nav class="rightContainer">
+                <a href="account.html" target="_self">
+                    <svg class="accountIcon" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+                        <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/>
+                    </svg>
+                </a>
+                <button>
+                    <a href="post.html" target="_self">
+                        Create a post
+                        <svg class="plusIcon" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
+                            <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                        </svg>
+                    </a>
+                </button>
+            </nav>
+        </div>
+        <section class="arrow">
+            <a href="index.html" target="_self">
+                <svg class="arrowIcon" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
+                </svg>
+            </a>
+        </section>
+        <article>
+            <div class="articleBody">
+                <h1 class="blogTitle">Blog Title</h1>
+                <h4 class="dateCatContainer">Date, Category</h4>
+                <h1 class="headings">Heading 1</h1>
+                <p>
+                    Aenean ultrices risus nibh, vel porttitor leo finibus a. Vivamus et nibh eget tellus gravida pulvinar a sed orci. 
+                    Quisque fermentum bibendum sapien, <strong>at pulvinar turpis condimentum at. Ut a metus convallis augue blandit cursus. 
+                    Vivamus laoreet dictum velit</strong>, quis pellentesque ligula elementum varius. Vivamus vitae velit at tortor tempus aliquam. 
+                    Quisque molestie euismod risus sagittis venenatis. Sed hendrerit justo nec quam tincidunt pellentesque. Aliquam nec 
+                    mauris vel purus interdum tincidunt sed ac velit.
+                </p>
+                <figure>
+                    <img class="imageBlogPost" src="img/img7.jpg" alt="img7">
+                    <figcaption class="imageCaption">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer tempor urna eu urna scelerisque luctus. Donec ultrices feugiat eros sit amet viverra.
+                    </figcaption>
+                </figure>
+                <h2 class="headings">Heading 2</h2>
+                <p>
+                    Aenean ultrices risus nibh, vel porttitor leo finibus a. Vivamus et nibh eget tellus gravida pulvinar a sed orci. 
+                    Quisque fermentum bibendum sapien, at pulvinar turpis condimentum at. Ut a metus convallis augue blandit cursus. 
+                    Vivamus laoreet dictum velit, quis <strong>pellentesque ligula elementum varius. Vivamus vitae velit at tortor tempus aliquam. 
+                    Quisque molestie euismod risus sagittis</strong> venenatis. Sed hendrerit justo nec quam tincidunt pellentesque. Aliquam nec 
+                    mauris vel purus interdum tincidunt sed ac velit. Morbi velit nulla, fermentum et ligula consequat, egestas accumsan urna. 
+                    In ligula nulla, bibendum auctor eros a, ullamcorper tristique ligula. Donec augue est, pellentesque at ornare at, 
+                    dapibus ut dui. Quisque sollicitudin diam id ex vestibulum accumsan. Orci varius natoque penatibus et magnis dis 
+                    parturient montes, nascetur ridiculus mus.
+                </p>
+                <p>
+                    Etiam ultricies suscipit felis. Nullam tempor ligula vel est scelerisque, 
+                    laoreet egestas libero iaculis. In sed iaculis orci. Phasellus rhoncus mollis magna, a scelerisque lectus tincidunt vel. 
+                    Aenean venenatis leo a molestie sagittis. Pellentesque elementum interdum urna ac rutrum. Nulla vulputate massa non nisl 
+                    finibus, id finibus nisl posuere. Morbi eu lorem et leo vulputate porttitor. Nam feugiat eu ex non scelerisque. Vivamus nec 
+                    ipsum nisl. Donec metus nunc, convallis eu bibendum sit amet, aliquet quis mauris.
+                </p>
+                <div class="subheadingsGrid">
+                    <h3 class="headings topLeft">Subheading</h3>
+                    <div class="bottomLeft">
+                        <p>
+                        Morbi velit nulla, fermentum et ligula consequat, egestas accumsan urna. In ligula nulla, bibendum auctor eros a, 
+                        ullamcorper tristique ligula. Donec augue est, pellentesque at ornare at, dapibus ut dui. Quisque sollicitudin diam 
+                        id ex vestibulum accumsan. Orci <u>varius natoque penatibus</u> et magnis dis parturient montes, nascetur ridiculus mus. 
+                        Etiam ultricies suscipit felis. Nullam tempor ligula vel est scelerisque, laoreet egestas libero iaculis. In sed 
+                        iaculis orci. Phasellus rhoncus mollis magna, a scelerisque lectus tincidunt vel. Aenean venenatis leo a molestie 
+                        sagittis. Pellentesque elementum interdum urna ac rutrum. Nulla vulputate massa non nisl finibus, id finibus nisl 
+                        posuere. Morbi eu lorem et leo vulputate porttitor. Nam feugiat eu ex non scelerisque. Vivamus nec ipsum nisl. Donec 
+                        metus nunc, convallis eu bibendum sit amet, aliquet quis mauris.
+                        </p>
+                    </div>
+                    <h3 class="headings topRight">Subheading</h3>
+                    <div class="bottomRight">
+                        <p>
+                        Morbi velit nulla, fermentum et ligula consequat, egestas accumsan urna. In ligula nulla, bibendum auctor eros a, 
+                        ullamcorper tristique ligula. Donec augue est, pellentesque at ornare at, dapibus ut dui. Quisque sollicitudin diam 
+                        id ex vestibulum accumsan. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. 
+                        Etiam ultricies suscipit felis.
+                        </p>
+                        <blockquote>
+                            <pre>
+    .somecode {
+        someproperty: somevalue;
+    }
+                            </pre>
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+            <div class="authorContainer">
+                <div class="abtAuthor">
+                    <h2>Author's name
+                        <div class="avatar">
+                            <svg class="avatarIcon svgNoHover" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-person-badge" viewBox="0 0 16 16">
+                                <path d="M6.5 2a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1h-3zM11 8a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+                                <path d="M4.5 0A2.5 2.5 0 0 0 2 2.5V14a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2.5A2.5 2.5 0 0 0 11.5 0h-7zM3 2.5A1.5 1.5 0 0 1 4.5 1h7A1.5 1.5 0 0 1 13 2.5v10.795a4.2 4.2 0 0 0-.776-.492C11.392 12.387 10.063 12 8 12s-3.392.387-4.224.803a4.2 4.2 0 0 0-.776.492V2.5z"/>
+                            </svg>
+                        </div>
+                    </h2>
+                    <h4>
+                        <svg class="locationIcon svgNoHover" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-geo" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M8 1a3 3 0 1 0 0 6 3 3 0 0 0 0-6zM4 4a4 4 0 1 1 4.5 3.969V13.5a.5.5 0 0 1-1 0V7.97A4 4 0 0 1 4 3.999zm2.493 8.574a.5.5 0 0 1-.411.575c-.712.118-1.28.295-1.655.493a1.319 1.319 0 0 0-.37.265.301.301 0 0 0-.057.09V14l.002.008a.147.147 0 0 0 .016.033.617.617 0 0 0 .145.15c.165.13.435.27.813.395.751.25 1.82.414 3.024.414s2.273-.163 3.024-.414c.378-.126.648-.265.813-.395a.619.619 0 0 0 .146-.15.148.148 0 0 0 .015-.033L12 14v-.004a.301.301 0 0 0-.057-.09 1.318 1.318 0 0 0-.37-.264c-.376-.198-.943-.375-1.655-.493a.5.5 0 1 1 .164-.986c.77.127 1.452.328 1.957.594C12.5 13 13 13.4 13 14c0 .426-.26.752-.544.977-.29.228-.68.413-1.116.558-.878.293-2.059.465-3.34.465-1.281 0-2.462-.172-3.34-.465-.436-.145-.826-.33-1.116-.558C3.26 14.752 3 14.426 3 14c0-.599.5-1 .961-1.243.505-.266 1.187-.467 1.957-.594a.5.5 0 0 1 .575.411z"/>
+                        </svg>
+                        Location
+                    </h4>
+                    <h4>
+                        <svg class="buildingIcon svgNoHover" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-building" viewBox="0 0 16 16">
+                            <path d="M4 2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1Zm3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1Zm3.5-.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1ZM4 5.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1ZM7.5 5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1Zm2.5.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1ZM4.5 8a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1Zm2.5.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1Zm3.5-.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1Z"/>
+                            <path d="M2 1a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V1Zm11 0H3v14h3v-2.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 .5.5V15h3V1Z"/>
+                        </svg>
+                        School and/or company
+                    </h4>
+                    <p>
+                        Aenean ultrices risus nibh, vel porttitor leo finibus a. Vivamus et nibh eget tellus 
+                        gravida pulvinar a sed orci. Quisque fermentum bibendum sapien, at pulvinar turpis 
+                        condimentum at. Ut a metus convallis augue blandit cursus. Vivamus laoreet dictum velit, 
+                        quis pellentesque ligula elementum varius. Vivamus laoreet dictum velit, quis pellentesque 
+                        ligula elementum varius.
+                    </p>
+                    <div class="iconsSocials">
+                        <a href="https://twitter.com/" target="_blank">
+                            <svg class="socialIcons" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-twitter" viewBox="0 0 16 16">
+                                <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"/>
+                            </svg>
+                        </a>
+                        <a href="https://www.facebook.com/" target="_blank">
+                            <svg class="socialIcons" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
+                                <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
+                            </svg>
+                        </a>
+                        <a href="https://www.linkedin.com" target="_blank">
+                            <svg class="socialIcons" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-linkedin" viewBox="0 0 16 16">
+                                <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </article>
+        <footer class="footerContainer">
+            <div id="copyrightFooter">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-c-circle" viewBox="0 0 16 16">
+                    <path d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8Zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0ZM8.146 4.992c-1.212 0-1.927.92-1.927 2.502v1.06c0 1.571.703 2.462 1.927 2.462.979 0 1.641-.586 1.729-1.418h1.295v.093c-.1 1.448-1.354 2.467-3.03 2.467-2.091 0-3.269-1.336-3.269-3.603V7.482c0-2.261 1.201-3.638 3.27-3.638 1.681 0 2.935 1.054 3.029 2.572v.088H9.875c-.088-.879-.768-1.512-1.729-1.512Z"/>
+                </svg>
+                <p>Copyright</p>
+                <div>
+                    Github: <a href="https://github.com/j25mq" target="_blank">j25mq</a>                
+                </div>
+                <div>
+                    Website: <a href="https://www.juliemiquelard.com" target="_blank">juliemiquelard.com</a>                
+                </div>
+            </div>
+        </footer>
+        <script src="js/toggle.js"></script>
+    </body>
+</html>

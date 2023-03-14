@@ -1,0 +1,31 @@
+ul, li {
+    list-style: none;
+}
+/* copyright */
+#copyrightFooter {
+    align-items: center;
+    font-family: 'Azeret Mono', monospace;
+    gap: 20px;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
+#copyrightFooter a,
+#copyrightFooter p {
+    font-family: 'Azeret Mono', monospace;
+    font-size: 16px;
+}
+#copyrightFooter a:hover {
+    opacity: .5;
+}
+@media (max-width: 800px) {
+    #copyrightFooter {
+        display: flex;
+        flex-direction: column;
+    }
+}
+@media (min-width: 801px) {
+    #copyrightFooter {
+        display: inline-flex;
+    }
+}
