@@ -1,37 +1,5 @@
 @import "index.css";
 
-.signUpInContainer {
-    display: flex;
-    gap: 10%;
-    justify-content: center;
-    padding-left: 10%;
-    padding-right: 10%;
-    padding-top: 20px;
-    margin-bottom: 300px;
-    text-align: center;
-}
-.signUpInContainer input {
-    background-color: transparent;
-    border: none;
-    border-bottom: 1px solid #bdbdbd;
-    border-radius: 10px;
-    color: #bdbdbd;
-    display: flex;
-    padding: 10px;
-    position: relative;
-    text-align: center;
-    outline: none;
-    width: 100%;
-}
-.signUpInContainer input:hover {
-    border-bottom: 1px solid #13234f;
-    color: #13234f;
-    transition: .3s;
-}
-.checkboxNewsletter {
-    display: flex;
-}
-
 @media (min-width: 450px) { /* medium to large screen */
     .checkboxNewsletter {
         left: -110px;
@@ -46,3 +14,34 @@
     }
 }
 
+.signUpInContainer {
+    display: flex;
+    gap: 10%;
+    justify-content: center;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 20px;
+    margin-bottom: 300px;
+    text-align: center;
+}
+.signUpInContainer input {
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #e5e5e5;
+    border-radius: 10px;
+    color: #e5e5e5;
+    display: flex;
+    padding: 10px;
+    position: relative;
+    text-align: center;
+    outline: none;
+    width: 100%;
+}
+.signUpInContainer input:hover {
+    border-bottom: 1px solid black;
+    color: black;
+    transition: .3s;
+}
+.checkboxNewsletter {
+    display: flex;
+}

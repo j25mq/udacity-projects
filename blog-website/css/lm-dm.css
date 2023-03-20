@@ -2,16 +2,14 @@
 .mainContainer label {
 	background: #eeeeee;
 	border-radius: 200px;
-	box-shadow: 5px 5px 10px 1px #848484;
+	box-shadow: 5px 5px 10px 1px #e5e5e5;
 	cursor: pointer;
 	display: flex;
 	height: 40px;
 	transition: .3s;
 	width: 80px;
 }
-body.dark label {
-	box-shadow: 5px 5px 10px 1px #1a1a1a;
-}
+
 /* light mode left white circle */
 label:after {
 	background: linear-gradient(180deg,#c1c1c1,#7d7d7d);
@@ -36,6 +34,7 @@ label:after {
 /* dark mode background */
 input:checked + label {
 	background: transparent;
+	box-shadow: 5px 5px 10px 1px #3c3c3c;
 }
 
 /* dark mode right black circle */
@@ -50,59 +49,52 @@ label:active:after {
 }
 
 label:hover {
-	transform: scale(1.01);
-	transition: .5s;
-}
-
-/* rulesets body for dark mode */
-body {
-	background-color: white;
-	transition: .5s;
-}
-body.dark {
-	background-color: #1e1e1e;
-}
-body.dark p {
-	color: white;
+	transform: scale(1.03);
+	transition: .2s;
 }
 
 /* dark-mode rulesets */
-.dm {
-    background-color: #1e1e1e;
-    color: white;
-    transition: 1s;
+body {
+	background-color: white;
+	transition: .3s;
 }
+body.dark,
+.dm {
+	background-color: #1e1e1e;
+	transition: 1s;
+}
+.dm,
 .dm .headerTitle,
 .dm svg,
 .dm .svgNoHover:hover,
 .dm .footerContainer a,
-.dm textarea {
+.dm textarea,
+body.dark p,
+.dm button,
+.dm figcaption,
+.dm button a {
     color: white;
 }
 .dm svg:hover,
 .dm .search:hover,
 .dm textarea:hover,
-.dm .footerContainer a:hover {
-    opacity: .8;
-	transition: .5s;
-}
+.dm .footerContainer a:hover,
 .dm button:hover {
+	color: white;
     opacity: .8;
-	transition: .5s;}
-.dm button,
-.dm figcaption {
-	background-color: #d5d6d7;
-	color: #1e1e1e;
+	transition: .3s;
 }
-.dm .searchBar:hover {
-    opacity: .8;
-	transition: .5s;
+.dm button,
+.dm figcaption,
+.dm button a {
+	background-color: #2d2d2d;
 }
 .dm input,
 .dm textarea {
 	background-color: transparent;
 }
 .dm .blogBox,
-.dm .socialNetworks {
-    box-shadow: 2px 10px 20px #555555;
+.dm .socialNetworks,
+.dm .authorContainer .abtAuthor {
+    box-shadow: 2px 10px 20px #3c3c3c;
 }

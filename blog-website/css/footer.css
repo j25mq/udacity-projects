@@ -1,6 +1,19 @@
+@media (max-width: 800px) {
+    #copyrightFooter {
+        display: flex;
+        flex-direction: column;
+    }
+}
+@media (min-width: 801px) {
+    #copyrightFooter {
+        display: inline-flex;
+    }
+}
+
 ul, li {
     list-style: none;
 }
+
 /* copyright */
 #copyrightFooter {
     align-items: center;
@@ -17,15 +30,4 @@ ul, li {
 }
 #copyrightFooter a:hover {
     opacity: .5;
-}
-@media (max-width: 800px) {
-    #copyrightFooter {
-        display: flex;
-        flex-direction: column;
-    }
-}
-@media (min-width: 801px) {
-    #copyrightFooter {
-        display: inline-flex;
-    }
 }
