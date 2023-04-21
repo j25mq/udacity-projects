@@ -6,14 +6,20 @@ let year = d.getFullYear();
 let newDate = `${day}-${month}-${year}`;
 
 /* global Variables */
-const apiKey = '&appid=b1b362bc998df24e677314d13dcb9514&units=metric';
+const apiKey = 'b1b362bc998df24e677314d13dcb9514&units=metric';
 const baseURL = 'https://api.openweathermap.org/data/2.5/weather?q=';
-const zipCode = document.getElementById('zip').value;
-const feelings = document.getElementById('feelings').value;
-const fullUrl = `${baseURL}${zipCode}${apiKey}`;
 
 // event listener added - behaviour when 'generate' button is clicked
 const performAction = (e)=>{
+    const zipCode = document.getElementById('zip').value;
+    if (!zipCode) {
+        alert("You must enter a zip code!");
+        return;
+    }
+    
+    const feelings = document.getElementById('feelings').value;
+    const fullUrl = `${baseURL}${zipCode}&appid=${apiKey}`;
+    
     getWeatherData(fullUrl).then(function(data){
         console.log("(getWeatherData.then) Processing...", data);
     
@@ -34,13 +40,16 @@ const performAction = (e)=>{
         targetForTemp.innerHTML = `<p>${msgForTemp}</p>`;
 
         // feel output - content
-        const input = data.main.feel;
-        const msgForFeel = `User's feelings: ${input}.`;
-        const targetForFeel = document.getElementById('content');
-        targetForFeel.innerHTML = `<p>${msgForFeel}</p>`;
+        if (feelings) {
+            const msgForFeel = `User's feelings: ${feelings}.`;
+            const targetForFeel = document.getElementById('content');
+            targetForFeel.innerHTML = `<p>${msgForFeel}</p>`;
+        }
 
     })
-    .catch(err => alert("Please enter a correct zip code."))
+    .catch(() => {
+        alert("Sorry, the zip code you entered seems invalid. Try again.");
+    });
 };
 
 let generate = document.getElementById('generate').addEventListener('click', performAction);
