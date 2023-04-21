@@ -1,38 +1,55 @@
-/* -------------------  MOBILE  --------------------- */
+@media (max-width:768px) { /* mobile */
+
+}
+@media (min-width:769px) and (max-width:1223px) { /* tablet */
+
+}
+@media (min-width:1224px) and (max-width:1824px) { /* desktop */
+  
+}
 
 body {
-    display: flex;
-    flex-direction: column;
-    font-family: Arial;
-    min-height: 100vh;
-  }
+  /* display: flex;
+  flex-direction: column;
+  font-family: Arial;
+  min-height: 100vh; */
+}
+
+header {
   
-  header {
-    /* header styles */
-  }
-  
-  main {
-    flex: 1;
-    padding: 20px;
-  }
-  
-  footer {
-    /* footer styles */
-  }
-  
-  /* -------------------  TABLET  --------------------- */
-  @media (min-width: 768px) {
-    /* use mobile */
-  }
-  
-  /* -------------------  DESKTOP  -------------------- */
-  
-  @media (min-width: 1224px) {
-    /* use mobile */
-  }
-  
-  /* -------------------  LARGE SCREENS  -------------- */
-  
-  @media (min-width: 1824px) {
-    /* use mobile */
-  }
+}
+
+main {
+
+}
+
+/* copyright */
+#copyrightFooter {
+    align-items: center;
+    font-family: 'Azeret Mono', monospace;
+    gap: 20px;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
+#copyrightFooter a,
+#copyrightFooter p {
+    font-family: 'Azeret Mono', monospace;
+    font-size: 15px;
+    color: white;
+    text-decoration: none;
+}
+#copyrightFooter a:hover {
+    opacity: .5;
+}
+@media (max-width: 800px) {
+    #copyrightFooter {
+        display: flex;
+        flex-direction: column;
+    }
+}
+@media (min-width: 801px) {
+    #copyrightFooter {
+        display: inline-flex;
+    }
+}
