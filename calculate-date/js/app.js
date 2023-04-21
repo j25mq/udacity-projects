@@ -12,7 +12,7 @@ const updateUI = (e)=>{
             const date1 = start;
             date1.setHours(0,0,0,0);
             const date2 = new Date(end);
-            console.log(date2.getFullYear(), date2.getMonth() + 1, date2.getDate()); // prints today's date
+            console.log(date2.getFullYear(), date2.getMonth() + 1, date2.getDate());
             const oneDay = 1000 * 60 * 60 * 24;
             const diffInTime = date2.getTime() - date1.getTime();
             const diffInDays = Math.round(diffInTime / oneDay);
