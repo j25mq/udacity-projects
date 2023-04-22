@@ -21,6 +21,18 @@ const render = async (root, state) => {
 // listening for load event because page should load before any JS is called
 window.addEventListener('load', () => {
     render(root, store);
+    root.innerHTML = `
+        <header>
+            <a href="/">Mars Dashboard</a>
+        </header>
+        <div>
+            ${addTabs()}
+        </div>
+        <div id="homepage">
+            <img src="media/bg.jpg" alt="bg-picture">
+            <p id="homepage-text">Mars Dashboard Homepage</p>
+        </div>
+    `;
 });
 
 // create app content
@@ -29,11 +41,11 @@ const App = (state) => {
         <header>
             <a href="/">Mars Dashboard</a>
         </header>
-        <section>
+        <div>
             ${addTabs()}
             ${displayRoverInfo()}
             ${displayRoverImg()}
-        </section>
+        </div>
     `;
 };
 
@@ -46,7 +58,7 @@ const fetchRoversData = (state, id) => {
         console.log(e);
     });
 };
-fetchRoversData(store, 'curiosity');
+// fetchRoversData(store, 'curiosity');
 
 // create tabs to switch between rovers
 const addTabs = () => {
