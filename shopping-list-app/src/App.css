@@ -1,0 +1,51 @@
+body {
+  margin: 0;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+.App {
+  font-size: 25px;
+  text-align: center;
+}
+.App-header {
+  background-color: #222;
+  color: white;
+  height: auto;
+  padding: 20px;
+}
+.App li {
+  list-style-type: disc;
+  margin-left: 30%;
+  text-align: left;
+}
+button,
+input {
+  border: 0 none;
+  border-radius: 5px;
+  font-size: 20px;
+  margin: 15px;
+  padding: 10px;
+  outline: none;
+  transition: .3s all ease-in-out;
+  width: 200px;
+}
+button {
+  background-color: #d9d9d9;
+  height: auto;
+}
+input {
+  background-color: #ebebeb;
+  width: auto;
+}
+button:hover,
+input:hover {
+  cursor: pointer;
+  opacity: .8;
+}
+.container {
+  margin: 5% 20%;
+}
+button:disabled {
+  background-color: transparent;
+  color: #d9d9d9;
+}
