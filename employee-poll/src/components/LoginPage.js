@@ -1,23 +1,21 @@
-// import { users } from "../utils/_DATA";
+import { users } from "../utils/_DATA";
 
 import { useSelector, useDispatch } from "react-redux";
 import { useState } from "react";
-import { handleLogIn } from "../actions/AuthedUser";
+import { handleLogIn, handleSetAuthedUser } from "../actions/AuthedUser";
 
-const LoginPage = (props) => {
+const LoginPage = () => {
     
-    const users = useSelector(state => state);
+    // const users = useSelector(state => state);
     const dispatch = useDispatch();
 
     const [ username, setUsername ] = useState("");
     const [ password, setPassword ] = useState("");
 
-    const usersList = Object.keys(users).map((user) => (
-        <option>
-            {users[user]}
-        </option>
-    ));
-    console.log(Object.keys(usersList)); 
+    const keys = Object.keys(users);
+    const usersList = keys.map(key => users[key]); 
+
+    // console.log(Object.keys(usersList)); 
 
     const handleSelect = (e) => {
         let selectedUser = e.target.value;
@@ -25,16 +23,20 @@ const LoginPage = (props) => {
         if (selectedUser) {
             setUsername(selectedUser.id)
             setPassword(selectedUser.password)
+            handleSetAuthedUser(selectedUser)
         }
+        console.log(selectedUser);
     };
+    // console.log(selectedUser);
 
     const handleSubmit = (e) => {
         dispatch(handleLogIn(username, password));
-        setUsername("");
-        setPassword("");
+        // setUsername("");
+        // setPassword("");
     };
 
     const handleUsername = (e) => {
+        // handleSetAuthedUser(selectedUser)
         let value = e.target.value;
         setUsername(value);
     };
@@ -50,11 +52,13 @@ const LoginPage = (props) => {
             <div>
                 <p>Choose a user among this list:</p>
                 <select onChange={handleSelect}>
-                    {/* {usersList} */}
+                    {usersList.map((user) => (
+                        <option key={user.id}>
+                            {user.id}
+                        </option>
+                    ))}
                 </select>
-            </div>
-            <div>
-                <form onSubmit={handleSubmit}>
+                <form onChange={handleSubmit}>
                     <label>Username</label>
                     <input
                         onChange={handleUsername}
@@ -75,12 +79,12 @@ const LoginPage = (props) => {
                     />
                     <button
                         type="submit"
-                        data-testid="submit-btn"
+                        data-testid="submit-btn-test"
                         id="submit-btn"
                     >
                         Login
                     </button>
-                </form>                
+                </form>
             </div>
         </div>
     );

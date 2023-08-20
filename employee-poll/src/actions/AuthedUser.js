@@ -17,13 +17,17 @@ export function getAuthedUser(user){
     };
 }
 
+export function handleSetAuthedUser(id) {
+    return setAuthedUser(id);
+}
+
 export function handleLogIn(username, password) {
     return (dispatch, getState) => {
         const { users } = getState();
         const user = Object.values(users).find((user) => user.id === username && user.password === password);
 
         if (!user) {
-            return dispatch(setAuthedUser(user));
+            return dispatch(handleSetAuthedUser(user));
         }
     };
 }
