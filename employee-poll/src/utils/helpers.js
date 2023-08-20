@@ -12,10 +12,10 @@ export function getCurrentTimestamp () {
 
 export const withRouter = (Component) => {
     const ComponentWithRouterProp = (props) => {
-        let location = useLocation();
-        let navigate = useNavigate();
+        // let location = useLocation();
+        // let navigate = useNavigate();
         let params = useParams();
-        return <Component {...props} router={{ location, navigate, params }} />;
+        return <Component {...props} router={{ params }} />;
     };
 
     return ComponentWithRouterProp;

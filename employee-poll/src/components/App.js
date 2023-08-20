@@ -1,9 +1,9 @@
 // import { connect } from "react-redux";
-// import { handleInitialData } from "../actions/Shared";
+import { handleInitialData } from "../actions/Shared";
 
 import LoadingBar from "react-redux-loading-bar";
-import { Routes, Route, Navigate, useLocation } from "react-router-dom";
-import { Fragment } from "react";
+import { Routes, Route } from "react-router-dom";
+import { useEffect, Fragment } from "react";
 
 import ErrorPage from "./404";
 import NavBar from "./NavBar";
@@ -14,66 +14,59 @@ import Leaderboard from "./Leaderboard";
 import NewPoll from "./NewPoll";
 import QuestionDetails from "./QuestionDetails";
 
+import { Dispatch } from "react";
+import { useDispatch } from "react-redux";
+
 const App = (props) => {
 
-    const location = useLocation();
-    const isUserAuth = props.authedUser !== null;
+    const dispatch = useDispatch();
+    
+    useEffect(() => {
+        dispatch(handleInitialData())
+    }, []);
 
-    function ProtectedRoute({ children }) {
-        return isUserAuth ? (
-            children
-        ) : (
-            <Navigate to="/login" replace state={{ path: location.pathname }} />
-        );
+    if (!props.authedUser || props.authedUser in [null, undefined]) {
+        return (
+            props.loading === true ?  null : <LoginPage/>
+        )
     }
+
     return (
         <div>
             <Fragment>
-                {!isUserAuth ? null : <NavBar />}
                 <LoadingBar/>
-                <Routes>
-                    <Route
-                        path="/"
-                        exact
-                        element={
-                            <ProtectedRoute>
-                                <Homepage/>
-                            </ProtectedRoute>
-                        }
-                    />
-                    <Route
-                        path="/leaderboard"
-                        element={
-                            <ProtectedRoute>
-                                <Leaderboard/>
-                            </ProtectedRoute>
-                        }
-                    />
-                    <Route
-                        path="/add"
-                        element={
-                            <ProtectedRoute>
-                                <NewPoll/>
-                            </ProtectedRoute>
-                        }
-                    />
-                    <Route
-                        path="/question/:id"
-                        element={
-                            <ProtectedRoute>
-                                <QuestionDetails/>
-                            </ProtectedRoute>
-                        }
-                    />
-                    <Route
-                        path="/login"
-                        element={<LoginPage/>}
-                    />
-                    <Route
-                        path="*"
-                        element={<ErrorPage/>}
-                    />
-                </Routes>
+                {props.loading === true ? null :
+                    <div id="container">
+                        <NavBar/>
+                            <Routes>
+                            <Route
+                                path="/"
+                                exact
+                                element={<Homepage/>}
+                            />
+                            <Route
+                                path="/leaderboard"
+                                element={<Leaderboard/>}
+                            />
+                            <Route
+                                path="/add"
+                                element={<NewPoll/>}
+                            />
+                            <Route
+                                path="/question/:id"
+                                element={<QuestionDetails/>}
+                            />
+                            <Route
+                                path="/login"
+                                element={<LoginPage/>}
+                            />
+                            <Route
+                                path="*"
+                                element={<ErrorPage/>}
+                            />
+                        </Routes>
+                    </div>
+                }
             </Fragment>
         </div>
     );

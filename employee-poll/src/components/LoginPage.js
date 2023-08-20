@@ -12,9 +12,9 @@ const LoginPage = (props) => {
     const [ username, setUsername ] = useState("");
     const [ password, setPassword ] = useState("");
 
-    const usersList = Object.keys(users).map((key) => (
+    const usersList = Object.keys(users).map((user) => (
         <option>
-            {users[key]}
+            {users[user]}
         </option>
     ));
     console.log(Object.keys(usersList)); 
@@ -49,13 +49,8 @@ const LoginPage = (props) => {
             Log in
             <div>
                 <p>Choose a user among this list:</p>
-                {usersList}
                 <select onChange={handleSelect}>
-                    {props.users && Object.keys(props.users).map((user) => (
-                        <option key={user.id} value={user.id}>
-                            {user.name}
-                        </option>
-                    ))}
+                    {/* {usersList} */}
                 </select>
             </div>
             <div>
