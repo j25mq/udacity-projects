@@ -8,15 +8,15 @@ export const ANSWER_QUESTION = "ANSWER_QUESTION";
 export function addQuestion(question) {
     return {
         type: ADD_QUESTION, 
-        question
-    }
+        question,
+    };
 };
 
 export function receiveQuestions(questions) {
     return {
         type: RECEIVE_QUESTIONS, 
-        questions
-    }
+        questions,
+    };
 }
 
 export function answerQuestion(questionid, authedUser, answer) {
@@ -24,8 +24,8 @@ export function answerQuestion(questionid, authedUser, answer) {
         type: ANSWER_QUESTION, 
         questionid,
         authedUser,
-        answer
-    }
+        answer,
+    };
 }
 
 export function handleAddQuestion(question) {

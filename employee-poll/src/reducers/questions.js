@@ -17,11 +17,11 @@ export default function questions(state = {}, action) {
         optionTwo.votes = optionTwo.votes.concat(action.authedUser)
       }
       return {
-              ...state,
-               [action.qid]: {...state[action.qid],
-                   optionOne: optionOne,
-                   optionTwo: optionTwo
-                }
+        ...state,
+        [action.qid]: {...state[action.qid],
+            optionOne: optionOne,
+            optionTwo: optionTwo
+          }
         }
     case ADD_QUESTION:    
       return {

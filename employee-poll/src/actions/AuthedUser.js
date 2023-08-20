@@ -1,5 +1,5 @@
-import { users } from "../utils/_DATA";
-
+// import { users } from "../utils/_DATA";
+// import HomePage from '../components/Homepage';
 export const SET_AUTHED_USER = "SET_AUTHED_USER";
 export const GET_AUTHED_USER = "GET_AUTHED_USER";
 

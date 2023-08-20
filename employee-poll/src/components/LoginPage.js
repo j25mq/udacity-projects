@@ -1,15 +1,27 @@
-import { connect } from "react-redux";
+// import { users } from "../utils/_DATA";
+
+import { useSelector, useDispatch } from "react-redux";
 import { useState } from "react";
 import { handleLogIn } from "../actions/AuthedUser";
-import { users } from "../utils/_DATA";
 
-const LoginPage = ({ props, dispatch, users }) => {
+const LoginPage = (props) => {
+    
+    const users = useSelector(state => state);
+    const dispatch = useDispatch();
 
     const [ username, setUsername ] = useState("");
     const [ password, setPassword ] = useState("");
 
+    const usersList = Object.keys(users).map((key) => (
+        <option>
+            {users[key]}
+        </option>
+    ));
+    console.log(Object.keys(usersList)); 
+
     const handleSelect = (e) => {
-        let selectedUser = users.find(user => user.id === e.target.value)
+        let selectedUser = e.target.value;
+        // let selectedUser = users.find(user => user.id === e.target.value)
         if (selectedUser) {
             setUsername(selectedUser.id)
             setPassword(selectedUser.password)
@@ -36,34 +48,35 @@ const LoginPage = ({ props, dispatch, users }) => {
         <div>
             Log in
             <div>
-                <p>Choose an user among this list:</p>
+                <p>Choose a user among this list:</p>
+                {usersList}
                 <select onChange={handleSelect}>
-                    {users.map((user) => (
+                    {props.users && Object.keys(props.users).map((user) => (
                         <option key={user.id} value={user.id}>
                             {user.name}
                         </option>
                     ))}
-                </select>                
+                </select>
             </div>
             <div>
                 <form onSubmit={handleSubmit}>
                     <label>Username</label>
                     <input
+                        onChange={handleUsername}
                         type="text"
                         value={username}
                         name="username"
                         id="username"
                         data-testid="username"
-                        onChange={handleUsername}
                     />
                     <label>Password</label>
                     <input
+                        onChange={handlePassword}
                         type="password"
                         value={password}
                         name="password"
                         id="password"
                         data-testid="password"
-                        onChange={handlePassword}
                     />
                     <button
                         type="submit"
@@ -78,8 +91,8 @@ const LoginPage = ({ props, dispatch, users }) => {
     );
 };
 
-const mapStateToProps = ({ users}) => ({
+// const mapStateToProps = ({ users}) => ({
     // users: Object.values(users)
-});
+// });
 
-export default connect(mapStateToProps)(LoginPage);
+export default LoginPage;

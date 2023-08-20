@@ -1,12 +1,16 @@
-import { SET_AUTHED_USER } from "../actions/AuthedUser";
+import { GET_AUTHED_USER, SET_AUTHED_USER } from "../actions/AuthedUser";
 
-const authedUser = (state = null, action) => {
+export default function authedUser(state = null, action) {
     switch (action.type) {
-    case SET_AUTHED_USER:
-        return  action.id
-    default:
-        return state;
-    }
-};
+        case SET_AUTHED_USER:
+            return action.id;
 
-export default authedUser;
+        case GET_AUTHED_USER:
+            return {
+                ...state,
+                ...action.authedUser
+            }
+        default:
+            return state;
+    }
+}
