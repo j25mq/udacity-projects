@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import QuestionItem from "./QuestionItem";
+import Question from "./Question";
 import { useState, useEffect } from "react";
 
 const Homepage = (props) => {
@@ -44,7 +44,7 @@ const Homepage = (props) => {
                 <ul>
                     {questions.map((questionId) => (
                         <li key={questionId}>
-                            <QuestionItem questionId={questionId} />
+                            <Question questionId={questionId} />
                         </li>
                     ))}
                 </ul>

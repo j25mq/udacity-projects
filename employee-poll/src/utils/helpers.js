@@ -10,13 +10,13 @@ export function getCurrentTimestamp () {
     return Date.now()
 }
 
-export const withRouter = (Component) => {
-    const ComponentWithRouterProp = (props) => {
+export const withRouter = (Screen) => {
+    const ScreenWithRouterProp = (props) => {
         // let location = useLocation();
         // let navigate = useNavigate();
         let params = useParams();
-        return <Component {...props} router={{ params }} />;
+        return <Screen {...props} router={{params}} />;
     };
 
-    return ComponentWithRouterProp;
+    return ScreenWithRouterProp;
 };

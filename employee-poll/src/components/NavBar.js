@@ -1,14 +1,16 @@
 // import { connect } from "react-redux";
 // import { getAuthedUser } from "../actions/AuthedUser";
-
-import { Link  } from "react-router-dom";
-import { setAuthedUser } from "../actions/AuthedUser";
+import { Link } from "react-router-dom";
+import { handleSetAuthed } from "../actions/AuthedUser"
 
 const NavBar = (props) => {
-    const LogOut = () => {
-        if (props.userData != null) {
-            props.dispatch(setAuthedUser(null));
-        }
+
+    const LogOut = (e) => {
+        props.dispatch(handleSetAuthed(null)) ;
+    };
+
+    if (!props.user) {
+      return null
     };
 
     const userid = props.user.id;
@@ -37,13 +39,7 @@ const NavBar = (props) => {
                 <span>{username}</span>
             </div>
         </nav>
-    )
+    );
 };
-
-// const mapStateToProps = ({ authedUser, users }) => {
-//     return { userData: users[authedUser] };
-// };
-
-// export default connect(mapStateToProps)(NavBar);
 
 export default NavBar;

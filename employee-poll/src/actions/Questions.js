@@ -19,10 +19,10 @@ export function receiveQuestions(questions) {
     };
 }
 
-export function answerQuestion(questionid, authedUser, answer) {
+export function answerQuestion(qid, authedUser, answer) {
     return {
         type: ANSWER_QUESTION, 
-        questionid,
+        qid,
         authedUser,
         answer,
     };
@@ -41,11 +41,11 @@ export function handleAddQuestion(question) {
     };
 }
 
-export function handleAnswerQuestion({ authedUser, answer, questionid}) {
+export function handleAnswerQuestion({ authedUser, answer, qid}) {
     return (dispatch) => {
-        dispatch(handleAnswerQuestion({authedUser, answer, questionid}))
+        dispatch(handleAnswerQuestion({ authedUser, answer, qid }))
         dispatch(showLoading());
-        return _saveQuestionAnswer({ authedUser, answer, questionid}).then(
+        return _saveQuestionAnswer({ authedUser, answer, qid}).then(
             dispatch(hideLoading())
         )
         .catch((e) => {
