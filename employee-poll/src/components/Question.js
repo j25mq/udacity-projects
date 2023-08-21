@@ -25,7 +25,7 @@ const Question = (props) => {
             </div>
             <Link to={"/question/id="+id} >
                 {props.voted ? "View" : "Vote for this poll"}
-            </Link> 
+            </Link>
         </div>
     );
 };
