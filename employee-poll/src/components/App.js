@@ -91,7 +91,7 @@ const App = (props) => {
                         <NavBar/> 
                         <Routes>
                             <Route path="/" exact element={<Homepage/>}/> 
-                            <Route path="/leaderborad" element={<Leaderboard/>} />
+                            <Route path="/leaderboard" element={<Leaderboard/>} />
                             <Route path="/new" element={<NewPoll/>}/>
                             <Route path="/question/:id"  element={<QuestionPage/>}/> 
                             <Route path="*" exact element={<ErrorPage/>} />

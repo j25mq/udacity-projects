@@ -1,6 +1,7 @@
 import { connect } from "react-redux";
 import Question from "./Question";
 import { useState, useEffect } from "react";
+import Navbar from "./NavBar";
 
 const Homepage = (props) => {
 
@@ -25,31 +26,37 @@ const Homepage = (props) => {
     };
 
     return (
+        // <div>
         <div>
-            <div>
-                <button
-                    onClick={showAnsweredPolls}
-                    data-testid="answered-questions-test-id"
-                >
-                    Answered Polls
-                </button>
-                <button
-                    onClick={showUnAnsweredPolls}
-                    data-testid="unanswered-questions-test-id"
-                >
-                    UnAnswered Polls
-                </button>
-            </div>
-            <div>
-                <ul>
-                    {questions.map((questionId) => (
+            <Navbar />
+            <button
+                onClick={showUnAnsweredPolls}
+                data-testid="unanswered-questions-test-id"
+            >
+                New Polls
+                {questions.map((questionId) => (
+                    <ul>
                         <li key={questionId}>
-                            <Question questionId={questionId} />
+                            <Question question={questionId}/>
                         </li>
-                    ))}
-                </ul>
-            </div>
+                    </ul>
+                ))}
+            </button>
+            <button
+                onClick={showAnsweredPolls}
+                data-testid="answered-questions-test-id"
+            >
+                Answered Polls
+                {questions.map((questionId) => (
+                    <ul>
+                        <li key={questionId}>
+                            <Question questionId={questionId}/>
+                        </li>
+                    </ul>
+                ))}
+            </button>
         </div>
+        // </div>
     );
 };
 
@@ -61,15 +68,23 @@ const mapStateToProps = ({ questions, authedUser, users }) => {
     const answeredQuestions = Object.keys(questions)
         .map(k => questions[k])
         .filter((questionId) => authedUserAnsweredPolls.includes(questionId))
-        .sort((a,b) => {
-            return questions[b].timestamp - questions[a].timestamp;
+        // .sort((a,b) => {
+        //     return questions[b].timestamp - questions[a].timestamp;
+        // });
+        // .sort((a, b) => b.timestamp - a.timestamp)
+        .sort((a, b) => {
+            return questions[b.id].timestamp - questions[a.id].timestamp;
         });
 
     const unAnsweredQuestions = Object.keys(questions)
         .map(k => questions[k])
         .filter((questionId) => !authedUserAnsweredPolls.includes(questionId))
+        // .sort((a, b) => {
+        //     return questions[b].timestamp - questions[a].timestamp;
+        // });
+        // .sort((a, b) => b.timestamp - a.timestamp)
         .sort((a, b) => {
-            return questions[b].timestamp - questions[a].timestamp;
+            return questions[b.id].timestamp - questions[a.id].timestamp;
         });
         
     const userQuestions = user.questions;

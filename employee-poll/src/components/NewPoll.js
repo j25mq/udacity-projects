@@ -3,6 +3,9 @@
 
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
+import Homepage from "./Homepage";
 
 const NewPoll = ({ dispatch, authedUser }) => {
 
@@ -22,7 +25,7 @@ const NewPoll = ({ dispatch, authedUser }) => {
     };
   
     const handleAddQuestion = (e) => {
-        // e.preventDefault();
+        e.preventDefault();
         const newPoll = {
             author: authedUser,
             optionOneText: optionOneText,
@@ -33,6 +36,7 @@ const NewPoll = ({ dispatch, authedUser }) => {
         setOptionOneText("");
         setOptionTwoText("");
         navigate("/");
+        // return;
     };
   
     const validInputs = optionOneText === null || optionOneText === "" || optionOneText === undefined || optionTwoText === null || optionTwoText === "" || optionTwoText === undefined;

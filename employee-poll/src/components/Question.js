@@ -1,7 +1,7 @@
 import { connect } from "react-redux";
 import { formatDate } from "../utils/helpers";
 import { Link } from "react-router-dom";
-import { receiveQuestions } from "../actions/Questions";
+// import { receiveQuestions } from "../actions/Questions";
 
 const Question = (props) => {
 
@@ -25,8 +25,9 @@ const Question = (props) => {
                     {formatDate(timestamp)}
                 </h5>
             </div>
-            <Link to={"/question/id="+id} >
-                {props.voted ? "View" : "Vote for this poll"}
+            <Link to={"/question/id="+id}>
+                <button>Show more</button>
+                {/* {props.voted ? "View" : "Vote for this poll"} */}
             </Link>
         </div>
     );
@@ -34,7 +35,7 @@ const Question = (props) => {
 
 function mapStateToProps({ authedUser, users, questions }, { id }) {
 
-    const question = questions[id];
+    const question = questions;
     
     const user = question ? users[question.author] : null ;
 
