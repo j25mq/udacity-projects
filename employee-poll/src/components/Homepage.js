@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 
 const Homepage = (props) => {
 
-    const [questions, setQuestions] = useState(props.unAnsweredQuestions);
+    const [ questions, setQuestions ] = useState(props.unAnsweredQuestions);
 
     useEffect(() => {
         const userAddedQuestions = props.userQuestions.filter(
@@ -59,17 +59,19 @@ const mapStateToProps = ({ questions, authedUser, users }) => {
     const authedUserAnsweredPolls = (user !== null || user !== undefined) && Object.keys(user.answers);
 
     const answeredQuestions = Object.keys(questions)
-    .filter((questionId) => authedUserAnsweredPolls.includes(questionId))
-    .sort((a, b) => {
-        return questions[b].timestamp - questions[a].timestamp;
-    });
+        .map(k => questions[k])
+        .filter((questionId) => authedUserAnsweredPolls.includes(questionId))
+        .sort((a,b) => {
+            return questions[b].timestamp - questions[a].timestamp;
+        });
 
     const unAnsweredQuestions = Object.keys(questions)
-    .filter((questionId) => !authedUserAnsweredPolls.includes(questionId))
-    .sort((a, b) => {
-        return questions[b].timestamp - questions[a].timestamp;
-    });
-
+        .map(k => questions[k])
+        .filter((questionId) => !authedUserAnsweredPolls.includes(questionId))
+        .sort((a, b) => {
+            return questions[b].timestamp - questions[a].timestamp;
+        });
+        
     const userQuestions = user.questions;
 
     return {

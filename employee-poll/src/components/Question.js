@@ -1,19 +1,21 @@
 import { connect } from "react-redux";
 import { formatDate } from "../utils/helpers";
 import { Link } from "react-router-dom";
+import { receiveQuestions } from "../actions/Questions";
 
 const Question = (props) => {
+
     const { author, timestamp, id } = props.question;
 
     if (props.user === undefined) {
-      return null
+        return null
     };
 
     const username = props.user.name;
     const userId = props.user.id;
 
     return ( 
-      <div>
+        <div>
             <img src={process.env.PUBLIC_URL + '/img/' + userId + '.JPG'} alt={`${author}'s avatar`}  />
             <span>
             Created by:{username}
@@ -33,6 +35,7 @@ const Question = (props) => {
 function mapStateToProps({ authedUser, users, questions }, { id }) {
 
     const question = questions[id];
+    
     const user = question ? users[question.author] : null ;
 
     return {
