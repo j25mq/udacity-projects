@@ -88,7 +88,7 @@ const App = (props) => {
                 <LoadingBar/>
                 {props.loading === true ? null :
                     <div id="container">
-                        <NavBar/> 
+                        <NavBar/>
                         <Routes>
                             <Route path="/" exact element={<Homepage/>}/> 
                             <Route path="/leaderboard" element={<Leaderboard/>} />

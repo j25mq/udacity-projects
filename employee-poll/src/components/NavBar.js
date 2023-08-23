@@ -5,19 +5,20 @@ import { handleSetAuthed } from "../actions/AuthedUser"
 
 const NavBar = (props) => {
 
-    const LogOut = (e) => {
-        props.dispatch(handleSetAuthed(null)) ;
+    const LogOut = () => {
+        handleSetAuthed(null);
     };
 
-    if (!props.user) {
-      return null
-    };
+    // if (!props.user) {
+    //   return null
+    // }
 
-    const userid = props.user.id;
-    const username = props.user.name;
+    // const userid = props.user.id;
+    // const username = props.user.name;
 
     return (
         <nav>
+            <div>Navbar</div>
             <ul>
                 <li>
                     <Link to="/">Homepage</Link>
@@ -26,18 +27,18 @@ const NavBar = (props) => {
                     <Link to="/leaderboard">Leaderboard</Link>
                 </li>
                 <li>
-                    <Link to="/add">New Poll</Link>
+                    <Link to="/new">New Poll</Link>
                 </li>
                 <li>
-                    <Link to="/login" onClick={LogOut()}>
+                    <Link to="/" onClick={LogOut()}>
                         <button>Log Out</button>
                     </Link>
                 </li>
             </ul>
-            <div>
+            {/* <div>
                 <img src={process.env.PUBLIC_URL + "/img/" + userid + ".JPG"} alt={`${userid}"s avatar`}/>
                 <span>{username}</span>
-            </div>
+            </div> */}
         </nav>
     );
 };

@@ -28,7 +28,6 @@ const Homepage = (props) => {
     return (
         // <div>
         <div>
-            <Navbar />
             <button
                 onClick={showUnAnsweredPolls}
                 data-testid="unanswered-questions-test-id"
@@ -36,7 +35,7 @@ const Homepage = (props) => {
                 New Polls
                 {questions.map((questionId) => (
                     <ul>
-                        <li key={questionId}>
+                        <li key={questions.id}>
                             <Question question={questionId}/>
                         </li>
                     </ul>
@@ -65,17 +64,6 @@ const mapStateToProps = ({ questions, authedUser, users }) => {
 
     const authedUserAnsweredPolls = (user !== null || user !== undefined) && Object.keys(user.answers);
 
-    const answeredQuestions = Object.keys(questions)
-        .map(k => questions[k])
-        .filter((questionId) => authedUserAnsweredPolls.includes(questionId))
-        // .sort((a,b) => {
-        //     return questions[b].timestamp - questions[a].timestamp;
-        // });
-        // .sort((a, b) => b.timestamp - a.timestamp)
-        .sort((a, b) => {
-            return questions[b.id].timestamp - questions[a.id].timestamp;
-        });
-
     const unAnsweredQuestions = Object.keys(questions)
         .map(k => questions[k])
         .filter((questionId) => !authedUserAnsweredPolls.includes(questionId))
@@ -86,7 +74,22 @@ const mapStateToProps = ({ questions, authedUser, users }) => {
         .sort((a, b) => {
             return questions[b.id].timestamp - questions[a.id].timestamp;
         });
-        
+    
+    // console.log('unAnsweredQuestions', unAnsweredQuestions);
+
+    const answeredQuestions = Object.keys(questions)
+    .map(k => questions[k])
+    .filter((questionId) => authedUserAnsweredPolls.includes(questionId))
+    // .sort((a,b) => {
+    //     return questions[b].timestamp - questions[a].timestamp;
+    // });
+    // .sort((a, b) => b.timestamp - a.timestamp)
+    .sort((a, b) => {
+        return questions[b.id].timestamp - questions[a.id].timestamp;
+    });
+    
+    // console.log('answeredQuestions', answeredQuestions);
+
     const userQuestions = user.questions;
 
     return {

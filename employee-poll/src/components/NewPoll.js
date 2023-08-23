@@ -3,9 +3,9 @@
 
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Link } from "react-router-dom";
-import { Routes, Route } from "react-router-dom";
-import Homepage from "./Homepage";
+// import { Link } from "react-router-dom";
+// import { Routes, Route } from "react-router-dom";
+// import Homepage from "./Homepage";
 
 const NewPoll = ({ dispatch, authedUser }) => {
 
