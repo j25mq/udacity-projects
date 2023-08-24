@@ -1,101 +1,67 @@
 import { connect } from "react-redux";
 import Question from "./Question";
 import { useState, useEffect } from "react";
-import Navbar from "./NavBar";
+// import Navbar from "./NavBar";
 
 const Homepage = (props) => {
 
-    const [ questions, setQuestions ] = useState(props.unAnsweredQuestions);
+    const [ questions, setQuestions ] = useState(props.questions);
 
-    useEffect(() => {
-        const userAddedQuestions = props.userQuestions.filter(
-        (question) =>
-            !props.unAnsweredQuestions.includes(question) &&
-            !props.answeredQuestions.includes(question)
-        );
-        const defaultList = props.unAnsweredQuestions.concat(userAddedQuestions);
-        setQuestions(defaultList);
-    }, [props.userQuestions]);
+    const unAnsweredQuestions = Object.values(questions)
+        .filter(
+            ({ optionOne, optionTwo }) =>
+                !optionOne.votes.includes(props.authedUser) &&
+                !optionTwo.votes.includes(props.authedUser)
+        )
+        .sort((a, b) => b.timestamp - a.timestamp);
 
-    const showAnsweredPolls = () => {
-        setQuestions(props.answeredQuestions);
-    };
+    const answeredQuestions = Object.values(questions)
+        .filter(
+            ({ optionOne, optionTwo }) =>
+                optionOne.votes.includes(props.authedUser) &&
+                optionTwo.votes.includes(props.authedUser)
+        )
+        .sort((a, b) => b.timestamp - a.timestamp);
 
-    const showUnAnsweredPolls = () => {
-        setQuestions(props.unAnsweredQuestions);
-    };
+    console.log("unAnsweredQuestions", unAnsweredQuestions);
+    console.log("answeredQuestions", answeredQuestions);
 
     return (
-        // <div>
         <div>
-            <button
-                onClick={showUnAnsweredPolls}
-                data-testid="unanswered-questions-test-id"
-            >
+            <div>
                 New Polls
-                {questions.map((questionId) => (
-                    <ul>
-                        <li key={questions.id}>
-                            <Question question={questionId}/>
+                <ul>
+                    {unAnsweredQuestions.map((question) => (
+                        <li key={question.id}>
+                            <Question question={question}/>
                         </li>
-                    </ul>
-                ))}
-            </button>
-            <button
-                onClick={showAnsweredPolls}
-                data-testid="answered-questions-test-id"
-            >
+                    ))}
+                </ul>
+            </div>
+            <div>
                 Answered Polls
-                {questions.map((questionId) => (
-                    <ul>
-                        <li key={questionId}>
-                            <Question questionId={questionId}/>
+                <ul>
+                    {answeredQuestions.map((question) => (
+                        <li key={question.id}>
+                            <Question question={question}/>
                         </li>
-                    </ul>
-                ))}
-            </button>
+                    ))}                    
+                </ul>
+            </div>
         </div>
-        // </div>
     );
 };
 
 const mapStateToProps = ({ questions, authedUser, users }) => {
+
     const user = users[authedUser];
-
-    const authedUserAnsweredPolls = (user !== null || user !== undefined) && Object.keys(user.answers);
-
-    const unAnsweredQuestions = Object.keys(questions)
-        .map(k => questions[k])
-        .filter((questionId) => !authedUserAnsweredPolls.includes(questionId))
-        // .sort((a, b) => {
-        //     return questions[b].timestamp - questions[a].timestamp;
-        // });
-        // .sort((a, b) => b.timestamp - a.timestamp)
-        .sort((a, b) => {
-            return questions[b.id].timestamp - questions[a.id].timestamp;
-        });
-    
-    // console.log('unAnsweredQuestions', unAnsweredQuestions);
-
-    const answeredQuestions = Object.keys(questions)
-    .map(k => questions[k])
-    .filter((questionId) => authedUserAnsweredPolls.includes(questionId))
-    // .sort((a,b) => {
-    //     return questions[b].timestamp - questions[a].timestamp;
-    // });
-    // .sort((a, b) => b.timestamp - a.timestamp)
-    .sort((a, b) => {
-        return questions[b.id].timestamp - questions[a.id].timestamp;
-    });
-    
-    // console.log('answeredQuestions', answeredQuestions);
 
     const userQuestions = user.questions;
 
     return {
-        answeredQuestions,
-        unAnsweredQuestions,
-        userQuestions
+        questions,
+        userQuestions,
+        authedUser,
     };
 };
 

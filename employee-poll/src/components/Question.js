@@ -1,22 +1,21 @@
-import { connect } from "react-redux";
-import { formatDate } from "../utils/helpers";
+// import { connect } from "react-redux";
+// import { formatDate } from "../utils/helpers";
 import { Link } from "react-router-dom";
 // import { receiveQuestions } from "../actions/Questions";
 
-const Question = (props) => {
+const Question = ({question}) => {
 
-    const { author, timestamp, id } = props.question;
-
-    if (props.user === undefined) {
-        return null
-    };
-
-    const username = props.user.name;
-    const userId = props.user.id;
+    // console.log("question", question);
 
     return ( 
         <div>
-            <img src={process.env.PUBLIC_URL + '/img/' + userId + '.JPG'} alt={`${author}'s avatar`}  />
+            <p>{question.optionOne.text}</p>
+            <p>
+            OR 
+            </p>
+            <p>{question.optionTwo.text}</p>
+            <p>Created by {question.author}</p>
+            {/* <img src={process.env.PUBLIC_URL + '/img/' + userId + '.JPG'} alt={`${author}'s avatar`}  />
             <span>
             Created by:{username}
             </span>
@@ -24,25 +23,15 @@ const Question = (props) => {
                 <h5 className="card-title">
                     {formatDate(timestamp)}
                 </h5>
-            </div>
-            <Link to={"/question/id="+id}>
-                <button>Show more</button>
-                {/* {props.voted ? "View" : "Vote for this poll"} */}
-            </Link>
+            </div> */}
+            <p>
+                <Link to={"/question/id="+question.id}>
+                    <button>Show more</button>
+                    {question.voted ? "View" : "Vote for this poll"}
+                </Link>                
+            </p>
         </div>
     );
 };
 
-function mapStateToProps({ authedUser, users, questions }, { id }) {
-
-    const question = questions;
-    
-    const user = question ? users[question.author] : null ;
-
-    return {
-        question: question,
-        user: user
-    };
-}
-  
-export default connect(mapStateToProps)(Question);
+export default Question;

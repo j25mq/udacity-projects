@@ -41,7 +41,8 @@ export function handleAddQuestion(question) {
     };
 }
 
-export function handleAnswerQuestion({ authedUser, answer, qid}) {
+// how to render state in UI
+export function handleAnswerQuestion({ authedUser, answer, qid }) {
     return (dispatch) => {
         dispatch(handleAnswerQuestion({ authedUser, answer, qid }))
         dispatch(showLoading());

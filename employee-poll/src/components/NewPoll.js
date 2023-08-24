@@ -1,5 +1,5 @@
 // import { connect } from "react-redux";
-// import { handleAddQuestion } from "../actions/Questions";
+import { handleAddQuestion } from "../actions/Questions";
 
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -24,8 +24,7 @@ const NewPoll = ({ dispatch, authedUser }) => {
         setOptionTwoText(text);
     };
   
-    const handleAddQuestion = (e) => {
-        e.preventDefault();
+    const saveNewPoll = () => {
         const newPoll = {
             author: authedUser,
             optionOneText: optionOneText,
@@ -43,7 +42,7 @@ const NewPoll = ({ dispatch, authedUser }) => {
   
     return (
         <div>
-            <form onSubmit={handleAddQuestion}>
+            <form onSubmit={saveNewPoll}>
                 <h3>Would you rather...</h3>
                 <label>
                     Option One:

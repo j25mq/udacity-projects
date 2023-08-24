@@ -1,20 +1,21 @@
-// import { connect } from "react-redux";
+import { connect } from "react-redux";
 // import { getAuthedUser } from "../actions/AuthedUser";
 import { Link } from "react-router-dom";
-import { handleSetAuthed } from "../actions/AuthedUser"
+import { handleSetAuthed } from "../actions/AuthedUser";
 
 const NavBar = (props) => {
 
     const LogOut = () => {
-        handleSetAuthed(null);
+        {props.dispatch(handleSetAuthed(null))}
+
+        if (props.user != null) {
+            props.dispatch(handleSetAuthed(null));
+            return null
+        }
     };
 
-    // if (!props.user) {
-    //   return null
-    // }
-
-    // const userid = props.user.id;
-    // const username = props.user.name;
+    const userid = props.user.id;
+    const username = props.user.name;
 
     return (
         <nav>
@@ -30,17 +31,23 @@ const NavBar = (props) => {
                     <Link to="/new">New Poll</Link>
                 </li>
                 <li>
-                    <Link to="/" onClick={LogOut()}>
+                    <Link to="/" onClick={LogOut}>
                         <button>Log Out</button>
                     </Link>
                 </li>
             </ul>
-            {/* <div>
+            <div>
+                <p>Hello {username}!</p>
                 <img src={process.env.PUBLIC_URL + "/img/" + userid + ".JPG"} alt={`${userid}"s avatar`}/>
-                <span>{username}</span>
-            </div> */}
+            </div>
         </nav>
     );
 };
 
-export default NavBar;
+const mapStateToProps = ({ users, authedUser}) => {
+    return { 
+        user: users[authedUser]
+    };
+};
+
+export default connect(mapStateToProps)(NavBar);

@@ -14,20 +14,20 @@ const Leaderboard = (props) => {
                         <th scope="col">#</th>
                         <th scope="col">Users</th>
                         <th scope="col">Answers</th>
-                        <th scope="col">Questiosn</th>
+                        <th scope="col">Questions</th>
                     </tr>
                 </thead>
                 <tbody>
-                    {props.user_ids.map((id, i) =>
-                    <tr>
-                        <th scope="row" key={i}>
-                            {i}
+                    {props.user_ids.map((id) =>
+                    <tr key={id}>
+                        <th scope="row">
+                            {id}
                         </th>
                         <td>
                             <img src={process.env.PUBLIC_URL + '/img/' +  props.users[id].id + '.JPG'} alt={`${ props.users[id].id}'s avatar`}  />
-                            <span>
+                            {/* <span>
                                 {props.users[id].name}
-                            </span>
+                            </span> */}
                         </td>
                         <td>
                             {Object.keys(props.users[id].answers).length}
@@ -46,7 +46,7 @@ const Leaderboard = (props) => {
 const mapStateToProps = ({users}) => {
     const usersIds = Object.keys(users).sort((a,b) => 
         Object.keys(users[b].answers).length -  Object.keys(users[a].answers).length)
-        console.log(usersIds)
+        console.log(usersIds);
         return { 
             user_ids: usersIds,
             users: users
