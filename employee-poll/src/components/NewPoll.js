@@ -35,7 +35,6 @@ const NewPoll = ({ dispatch, authedUser }) => {
         setOptionOneText("");
         setOptionTwoText("");
         navigate("/");
-        // return;
     };
   
     const validInputs = optionOneText === null || optionOneText === "" || optionOneText === undefined || optionTwoText === null || optionTwoText === "" || optionTwoText === undefined;
